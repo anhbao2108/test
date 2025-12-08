@@ -71,26 +71,30 @@ footer {
     margin-top: 40px;
 }
 /* ========================================= */
-/* ORANGE THEME PATCH (GIAO DIỆN CAM ĐỎ)    */
+/* MAVEN STYLE PATCH (XANH CHỦ ĐẠO - CAM ĐIỂM NHẤN) */
 /* ========================================= */
 
-/* 1. Đổi màu nền toàn web sang vàng kem nhạt */
+/* 1. Reset nền về trắng tinh khôi */
 body {
-    background-color: #fff8e1; /* Màu cũ là #f4f8fb */
+    background-color: #ffffff;
 }
 
-/* 2. Đổi màu Logo sang Cam đỏ */
+/* 2. Logo giữ nguyên màu xanh */
 .logo h1 {
-    color: #e64a19;
+    color: #0056b3;
 }
 
-/* 3. Đổi màu Link Menu khi Hover & Active */
+/* 3. Menu: Bình thường xanh, Hover vào mới ra Cam */
+nav ul li a {
+    color: #333; /* Màu đen xám nhẹ */
+}
 nav ul li a:hover, 
 nav ul li a.active {
-    color: #e64a19;
+    color: #e64a19; /* Cam đỏ điểm nhấn */
 }
 
-/* 4. Đổi nền Footer sang Cam đậm */
+/* 4. Footer: Nền Xanh, nhưng có viền Cam ở trên (Signature của Maven) */
 footer {
-    background-color: #d84315; /* Màu cũ là xanh */
+    background-color: #0056b3; /* Xanh y tế */
+    border-top: 8px solid #e64a19; /* Viền cam dày ở trên */
 }
