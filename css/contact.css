@@ -47,17 +47,15 @@
 .submit-btn:hover {
     background-color: #004494;
 }
-/* --- Orange Theme Patch for CONTACT --- */
+/* --- Maven Accent for CONTACT --- */
 
-.page-title {
-    color: #e64a19;
-}
-
-/* Nút Submit đổi sang cam */
+/* Nút Submit đổi thành màu Cam (Nổi bật nhất trang) */
 .submit-btn {
     background-color: #e64a19;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .submit-btn:hover {
-    background-color: #d84315; /* Hover màu đậm hơn */
+    background-color: #d84315; /* Hover màu cam đậm hơn */
 }
