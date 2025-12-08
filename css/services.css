@@ -64,4 +64,20 @@
     font-weight: bold;
     color: #aaa;
 }
-.close-btn:hover { color: #000; }
+.close-btn:hover { color: #000; } 
+/* --- Maven Accent for SERVICES --- */
+
+/* Tiêu đề vẫn giữ màu Xanh */
+.page-title {
+    color: #0056b3;
+}
+
+/* Card bình thường viền xám, Hover vào thì viền Cam */
+.service-card:hover {
+    border-color: #e64a19;
+    box-shadow: 0 5px 15px rgba(230, 74, 25, 0.2); /* Bóng màu cam nhẹ */
+}
+
+.service-card h3 {
+    color: #0056b3; /* Tên dịch vụ màu xanh */
+}
