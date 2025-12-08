@@ -47,3 +47,17 @@
 .submit-btn:hover {
     background-color: #004494;
 }
+/* --- Orange Theme Patch for CONTACT --- */
+
+.page-title {
+    color: #e64a19;
+}
+
+/* Nút Submit đổi sang cam */
+.submit-btn {
+    background-color: #e64a19;
+}
+
+.submit-btn:hover {
+    background-color: #d84315; /* Hover màu đậm hơn */
+}
