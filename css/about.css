@@ -42,12 +42,8 @@
     font-weight: bold;
     color: #0056b3;
 }
-/* --- Orange Theme Patch for ABOUT --- */
-
-.about-content h2 {
+/* Hover vào tiêu đề bài viết thì ra màu cam */
+.news-content h3:hover {
     color: #e64a19;
-}
-
-.dr-name {
-    color: #d84315;
+    cursor: pointer;
 }
