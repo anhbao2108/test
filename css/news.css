@@ -35,12 +35,8 @@
 .visible {
     opacity: 1; /* Hiện ra */
 }
-/* --- Orange Theme Patch for NEWS --- */
-
-.page-title {
+/* Hover vào tiêu đề bài viết thì ra màu cam */
+.news-content h3:hover {
     color: #e64a19;
-}
-
-.news-content h3 {
-    color: #e64a19;
+    cursor: pointer;
 }
