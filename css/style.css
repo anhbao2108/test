@@ -70,3 +70,27 @@ footer {
     padding: 20px 0;
     margin-top: 40px;
 }
+/* ========================================= */
+/* ORANGE THEME PATCH (GIAO DIỆN CAM ĐỎ)    */
+/* ========================================= */
+
+/* 1. Đổi màu nền toàn web sang vàng kem nhạt */
+body {
+    background-color: #fff8e1; /* Màu cũ là #f4f8fb */
+}
+
+/* 2. Đổi màu Logo sang Cam đỏ */
+.logo h1 {
+    color: #e64a19;
+}
+
+/* 3. Đổi màu Link Menu khi Hover & Active */
+nav ul li a:hover, 
+nav ul li a.active {
+    color: #e64a19;
+}
+
+/* 4. Đổi nền Footer sang Cam đậm */
+footer {
+    background-color: #d84315; /* Màu cũ là xanh */
+}
