@@ -1,10 +1,10 @@
 /* ======================== */
-/* 1. SLIDESHOW (CŨ - GIỮ NGUYÊN) */
+/* 1. CODE CŨ (GIỮ NGUYÊN)  */
 /* ======================== */
 .banner-slider {
     position: relative;
     width: 100%;
-    height: 500px; /* Chiều cao banner */
+    height: 500px;
     overflow: hidden;
 }
 
@@ -44,6 +44,7 @@
     padding: 15px;
     cursor: pointer;
     font-size: 18px;
+    z-index: 10;
 }
 .next-btn { right: 0; }
 .prev-btn { left: 0; }
@@ -55,55 +56,59 @@
 .welcome-text h2 { color: #0056b3; margin-bottom: 15px; }
 
 /* ======================== */
-/* 2. CÁC SECTION MỚI (FULL WIDTH) */
+/* 2. STYLE MỚI (FULL WIDTH) */
 /* ======================== */
 
-/* --- Bác Sĩ (Nền trắng, dàn ngang 3 cột) --- */
+/* --- Bác Sĩ (Nền Xám Nhạt) --- */
 .section-doctors {
-    background-color: #f8f9fa; /* Xám rất nhạt */
+    background-color: #f8f9fa;
     padding: 60px 0;
     text-align: center;
+    width: 100%; /* Tràn viền */
 }
 
 .doctor-grid {
-    display: flex; /* Dàn ngang */
-    justify-content: space-between; /* Cách đều nhau */
+    display: flex;
+    justify-content: center; /* Căn giữa */
     gap: 30px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .doctor-card {
     background: white;
     padding: 20px;
-    flex: 1; /* Chia đều độ rộng */
+    width: 300px; /* Cố định chiều rộng card */
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
+    border-radius: 10px;
 }
 
 .doctor-card img {
     width: 150px; height: 150px;
-    border-radius: 50%; /* Ảnh tròn */
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #458f9a; /* Viền xanh Maven */
+    border: 3px solid #458f9a;
 }
 
 /* --- Dịch Vụ (Nền XANH TEAL - Chuẩn Maven) --- */
 .section-services-highlight {
-    background-color: #458f9a; /* Màu xanh đặc trưng Maven */
-    color: white; /* Chữ trắng */
+    background-color: #458f9a; /* Màu xanh đặc trưng */
+    color: white;
     padding: 60px 0;
+    width: 100%; /* Tràn viền */
 }
 
-/* Class hỗ trợ dàn ngang: 1 bên chữ, 1 bên hình */
 .flex-row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 50px;
 }
 
-.text-col { flex: 1; } /* Chữ chiếm 1 phần */
-.img-col { flex: 1; }  /* Hình chiếm 1 phần */
+.text-col { flex: 1; }
+.img-col { flex: 1; }
 
 .img-col img {
     width: 100%;
@@ -119,18 +124,21 @@
     margin-top: 20px;
     font-weight: bold;
     border-radius: 30px;
+    text-transform: uppercase;
 }
 
 /* --- Khuyến Mãi (Nền CAM - Chuẩn Maven Accent) --- */
 .section-promo {
-    background-color: #ee7f6d; /* Màu cam san hô của Maven */
+    background-color: #ee7f6d; /* Màu cam san hô */
     color: white;
     padding: 60px 0;
+    width: 100%; /* Tràn viền */
 }
 
 .flex-row-reverse {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 50px;
     flex-direction: row-reverse; /* Đảo ngược: Hình trái, Chữ phải */
 }
@@ -149,7 +157,9 @@
     margin-top: 20px;
     font-weight: bold;
     border-radius: 30px;
+    text-transform: uppercase;
 }
+
 .btn-outline-white:hover {
     background: white;
     color: #ee7f6d;
