@@ -30,7 +30,7 @@ img {
 /* Container giới hạn chiều rộng để nội dung 1 cột không bị bè ngang quá mức */
 .container {
     width: 90%;
-    max-width: 1000px; /* Độ rộng chuẩn cho layout đọc 1 cột */
+    max-width: 1200px; /* Độ rộng chuẩn cho layout đọc 1 cột */
     margin: 0 auto;
 }
 
