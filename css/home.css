@@ -1,153 +1,156 @@
-/* ================================================== */
-/* 1. SECTION: BANNER (HERO)                          */
-/* ================================================== */
-.banner {
-    background-color: #e3f2fd; /* Màu nền xanh rất nhạt làm nền dự phòng */
-    /* Nếu có ảnh nền thì dùng dòng dưới (bỏ comment) */
-    /* background-image: url('../images/hero.jpg'); background-size: cover; background-position: center; */
-    
-    padding: 80px 0; /* Tạo độ cao cho banner */
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.banner-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.banner h1 {
-    font-size: 2.5rem; /* Chữ to nổi bật */
-    color: #0056b3;
-    margin-bottom: 20px;
-}
-
-.banner p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-/* ================================================== */
-/* 2. SECTION: ĐỘI NGŨ BÁC SĨ (TEAM)                  */
-/* ================================================== */
-.team {
-    margin-bottom: 60px;
-    text-align: center; /* Căn giữa nội dung toàn khối */
-}
-
-/* Danh sách bác sĩ - Layout 1 cột dọc */
-.team-list {
-    display: flex;
-    flex-direction: column; /* Xếp chồng dọc */
-    align-items: center;    /* Căn giữa trục ngang */
-    gap: 30px;              /* Khoảng cách giữa các bác sĩ */
-}
-
-.doctor-item {
-    background: #fff;
-    border: 1px solid #ddd; /* Viền nhẹ */
-    border-radius: 15px;    /* Bo góc thẻ */
-    padding: 30px;
+/* ======================== */
+/* 1. SLIDESHOW (CŨ - GIỮ NGUYÊN) */
+/* ======================== */
+.banner-slider {
+    position: relative;
     width: 100%;
-    max-width: 500px;       /* Giới hạn độ rộng thẻ cho đẹp */
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Bóng đổ nhẹ */
+    height: 500px; /* Chiều cao banner */
+    overflow: hidden;
 }
 
-/* Hiệu ứng Hover vào thẻ bác sĩ */
-.doctor-item:hover {
-    border-color: #e64a19; /* Viền đổi màu cam */
-    transform: translateY(-5px); /* Nổi lên nhẹ */
-    box-shadow: 0 10px 20px rgba(230, 74, 25, 0.15); /* Bóng cam */
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
 }
 
-.doctor-item img {
-    width: 150px;
-    height: 150px;
+.slide.active { display: block; }
+
+.slide img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 50%;     /* Ảnh tròn */
-    border: 3px solid #e3f2fd;
-    margin: 0 auto 15px auto; /* Căn giữa ảnh */
 }
 
-.doctor-item h3 {
+.caption {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    font-size: 24px;
     color: #0056b3;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
+    font-weight: bold;
+    border-left: 5px solid #e64a19;
 }
 
-.doctor-item p {
-    color: #666;
-    font-style: italic;
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.next-btn { right: 0; }
+.prev-btn { left: 0; }
+
+.welcome-text {
+    text-align: center;
+    padding: 50px 0;
+}
+.welcome-text h2 { color: #0056b3; margin-bottom: 15px; }
+
+/* ======================== */
+/* 2. CÁC SECTION MỚI (FULL WIDTH) */
+/* ======================== */
+
+/* --- Bác Sĩ (Nền trắng, dàn ngang 3 cột) --- */
+.section-doctors {
+    background-color: #f8f9fa; /* Xám rất nhạt */
+    padding: 60px 0;
+    text-align: center;
 }
 
-.section-footer {
+.doctor-grid {
+    display: flex; /* Dàn ngang */
+    justify-content: space-between; /* Cách đều nhau */
+    gap: 30px;
     margin-top: 30px;
 }
 
-/* ================================================== */
-/* 3. SECTION: DỊCH VỤ A-Z (SERVICES PREVIEW)         */
-/* ================================================== */
-.services-preview {
-    background-color: #f9f9f9; /* Nền xám nhẹ tách biệt section */
-    padding: 60px 0;
-    margin-bottom: 60px;
+.doctor-card {
+    background: white;
+    padding: 20px;
+    flex: 1; /* Chia đều độ rộng */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
 }
 
-.preview-content {
-    max-width: 700px; /* Gom gọn nội dung để dễ đọc */
-    margin: 0 auto;
-}
-
-.preview-content img {
-    width: 100%;
-    max-height: 400px;
+.doctor-card img {
+    width: 150px; height: 150px;
+    border-radius: 50%; /* Ảnh tròn */
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    border: 3px solid #458f9a; /* Viền xanh Maven */
 }
 
-.preview-content p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #444;
+/* --- Dịch Vụ (Nền XANH TEAL - Chuẩn Maven) --- */
+.section-services-highlight {
+    background-color: #458f9a; /* Màu xanh đặc trưng Maven */
+    color: white; /* Chữ trắng */
+    padding: 60px 0;
 }
 
-/* ================================================== */
-/* 4. SECTION: KHUYẾN MÃI (PROMOTION)                 */
-/* ================================================== */
-.promotion {
-    margin-bottom: 60px;
-    text-align: center;
+/* Class hỗ trợ dàn ngang: 1 bên chữ, 1 bên hình */
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }
 
-/* Tạo khung nổi bật cho khuyến mãi */
-.promo-content {
-    background-color: #fff3e0; /* Nền màu Cam rất nhạt */
-    border: 2px dashed #e64a19; /* Viền nét đứt màu cam nhấn mạnh */
-    border-radius: 15px;
-    padding: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-}
+.text-col { flex: 1; } /* Chữ chiếm 1 phần */
+.img-col { flex: 1; }  /* Hình chiếm 1 phần */
 
-.promo-content img {
+.img-col img {
     width: 100%;
-    max-width: 500px;
     border-radius: 10px;
-    margin: 0 auto 20px auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.promo-content p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 20px;
+.btn-white {
+    display: inline-block;
+    background: white;
+    color: #458f9a;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 30px;
 }
 
-.promo-content strong {
-    color: #d84315; /* Số % giảm giá màu cam đậm */
-    font-size: 1.4rem;
+/* --- Khuyến Mãi (Nền CAM - Chuẩn Maven Accent) --- */
+.section-promo {
+    background-color: #ee7f6d; /* Màu cam san hô của Maven */
+    color: white;
+    padding: 60px 0;
+}
+
+.flex-row-reverse {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-direction: row-reverse; /* Đảo ngược: Hình trái, Chữ phải */
+}
+
+.promo-highlight {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.btn-outline-white {
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+}
+.btn-outline-white:hover {
+    background: white;
+    color: #ee7f6d;
 }
