@@ -1,100 +1,138 @@
-/* --- RESET & GLOBAL --- */
+/* ================================================== */
+/* 1. RESET & BASIC SETUP                             */
+/* ================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f8fb; /* Màu nền xanh rất nhạt */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
+    font-size: 16px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: all 0.3s ease;
 }
 
-/* --- HEADER & MENU --- */
+img {
+    max-width: 100%; /* Đảm bảo ảnh không bị tràn khung */
+    height: auto;
+    display: block;
+}
+
+/* Container giới hạn chiều rộng để nội dung 1 cột không bị bè ngang quá mức */
+.container {
+    width: 90%;
+    max-width: 1000px; /* Độ rộng chuẩn cho layout đọc 1 cột */
+    margin: 0 auto;
+}
+
+/* ================================================== */
+/* 2. TYPOGRAPHY & COLORS                             */
+/* ================================================== */
+/* Màu chủ đạo: Xanh Y Tế */
+h1, h2, h3, h4 {
+    color: #0056b3; 
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Tiêu đề Section (Dùng chung) */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Gạch chân trang trí dưới tiêu đề (Màu cam) */
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #e64a19; /* Cam điểm nhấn */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ================================================== */
+/* 3. BUTTON STYLES (NÚT BẤM)                         */
+/* ================================================== */
+/* Nút Chính (Màu Cam - Kêu gọi hành động) */
+.btn-main {
+    display: inline-block;
+    background-color: #e64a19;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px; /* Bo tròn hiện đại */
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #e64a19;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-main:hover {
+    background-color: #bf360c; /* Cam đậm hơn khi hover */
+    border-color: #bf360c;
+}
+
+/* Nút Phụ (Viền Xanh - Xem thêm) */
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #0056b3;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 2px solid #0056b3;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* ================================================== */
+/* 4. HEADER & FOOTER CƠ BẢN                          */
+/* ================================================== */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky; /* Menu dính trên cùng */
     top: 0;
     z-index: 1000;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 0;
+/* Flexbox cho Header để logo và menu nằm ngang */
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo h1 {
-    color: #0056b3; /* Xanh y tế đậm */
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+.logo h1 { margin: 0; font-size: 24px; color: #0056b3; }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul li a:hover, nav ul li a.active { color: #e64a19; font-weight: bold; }
 
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    font-weight: 500;
-    color: #555;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover, nav ul li a.active {
-    color: #0056b3;
-}
-
-/* --- FOOTER --- */
 footer {
     background-color: #0056b3;
     color: white;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-/* ========================================= */
-/* MAVEN STYLE PATCH (XANH CHỦ ĐẠO - CAM ĐIỂM NHẤN) */
-/* ========================================= */
-
-/* 1. Reset nền về trắng tinh khôi */
-body {
-    background-color: #ffffff;
-}
-
-/* 2. Logo giữ nguyên màu xanh */
-.logo h1 {
-    color: #0056b3;
-}
-
-/* 3. Menu: Bình thường xanh, Hover vào mới ra Cam */
-nav ul li a {
-    color: #333; /* Màu đen xám nhẹ */
-}
-nav ul li a:hover, 
-nav ul li a.active {
-    color: #e64a19; /* Cam đỏ điểm nhấn */
-}
-
-/* 4. Footer: Nền Xanh, nhưng có viền Cam ở trên (Signature của Maven) */
-footer {
-    background-color: #0056b3; /* Xanh y tế */
-    border-top: 8px solid #e64a19; /* Viền cam dày ở trên */
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 5px solid #e64a19; /* Viền cam đặc trưng Maven */
 }
