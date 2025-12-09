@@ -1,77 +1,153 @@
-/* Slider Container */
-.banner-slider {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.slide {
-    display: none; /* Ẩn hết, chỉ hiện class active */
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.slide.active {
-    display: block;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Caption trên hình */
-.caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px 40px;
-    font-size: 24px;
-    color: #0056b3;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-/* Nút điều hướng */
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    z-index: 10;
-}
-
-.prev-btn { left: 0; }
-.next-btn { right: 0; }
-
-.welcome-text {
+/* ================================================== */
+/* 1. SECTION: BANNER (HERO)                          */
+/* ================================================== */
+.banner {
+    background-color: #e3f2fd; /* Màu nền xanh rất nhạt làm nền dự phòng */
+    /* Nếu có ảnh nền thì dùng dòng dưới (bỏ comment) */
+    /* background-image: url('../images/hero.jpg'); background-size: cover; background-position: center; */
+    
+    padding: 80px 0; /* Tạo độ cao cho banner */
     text-align: center;
-    padding: 50px 0;
+    margin-bottom: 50px;
 }
-.welcome-text h2 { color: #0056b3; margin-bottom: 20px; }
-/* --- Maven Accent for HOME --- */
 
-/* Chữ trên banner: Màu xanh cho dễ đọc */
-.caption {
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner h1 {
+    font-size: 2.5rem; /* Chữ to nổi bật */
     color: #0056b3;
-    background: rgba(255, 255, 255, 0.95); /* Nền trắng đục */
-    border-left: 5px solid #e64a19; /* Vạch cam trang trí bên trái */
+    margin-bottom: 20px;
 }
 
-/* Nút Next/Prev của Slider chuyển thành màu Cam */
-.prev-btn, .next-btn {
-    background: rgba(230, 74, 25, 0.8); /* Cam trong suốt */
+.banner p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
 }
-.prev-btn:hover, .next-btn:hover {
-    background: #e64a19; /* Cam đậm */
+
+/* ================================================== */
+/* 2. SECTION: ĐỘI NGŨ BÁC SĨ (TEAM)                  */
+/* ================================================== */
+.team {
+    margin-bottom: 60px;
+    text-align: center; /* Căn giữa nội dung toàn khối */
+}
+
+/* Danh sách bác sĩ - Layout 1 cột dọc */
+.team-list {
+    display: flex;
+    flex-direction: column; /* Xếp chồng dọc */
+    align-items: center;    /* Căn giữa trục ngang */
+    gap: 30px;              /* Khoảng cách giữa các bác sĩ */
+}
+
+.doctor-item {
+    background: #fff;
+    border: 1px solid #ddd; /* Viền nhẹ */
+    border-radius: 15px;    /* Bo góc thẻ */
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;       /* Giới hạn độ rộng thẻ cho đẹp */
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Bóng đổ nhẹ */
+}
+
+/* Hiệu ứng Hover vào thẻ bác sĩ */
+.doctor-item:hover {
+    border-color: #e64a19; /* Viền đổi màu cam */
+    transform: translateY(-5px); /* Nổi lên nhẹ */
+    box-shadow: 0 10px 20px rgba(230, 74, 25, 0.15); /* Bóng cam */
+}
+
+.doctor-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;     /* Ảnh tròn */
+    border: 3px solid #e3f2fd;
+    margin: 0 auto 15px auto; /* Căn giữa ảnh */
+}
+
+.doctor-item h3 {
+    color: #0056b3;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.doctor-item p {
+    color: #666;
+    font-style: italic;
+}
+
+.section-footer {
+    margin-top: 30px;
+}
+
+/* ================================================== */
+/* 3. SECTION: DỊCH VỤ A-Z (SERVICES PREVIEW)         */
+/* ================================================== */
+.services-preview {
+    background-color: #f9f9f9; /* Nền xám nhẹ tách biệt section */
+    padding: 60px 0;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.preview-content {
+    max-width: 700px; /* Gom gọn nội dung để dễ đọc */
+    margin: 0 auto;
+}
+
+.preview-content img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.preview-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* ================================================== */
+/* 4. SECTION: KHUYẾN MÃI (PROMOTION)                 */
+/* ================================================== */
+.promotion {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/* Tạo khung nổi bật cho khuyến mãi */
+.promo-content {
+    background-color: #fff3e0; /* Nền màu Cam rất nhạt */
+    border: 2px dashed #e64a19; /* Viền nét đứt màu cam nhấn mạnh */
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.promo-content img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+}
+
+.promo-content p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.promo-content strong {
+    color: #d84315; /* Số % giảm giá màu cam đậm */
+    font-size: 1.4rem;
 }
