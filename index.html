@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - Phòng Khám Nha Khoa</title>
+    <title>Trang Chủ - Phòng Khám Nha Khoa Dental Care</title>
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
     <header>
         <div class="container">
             <div class="logo"><h1>Dental Care</h1></div>
@@ -25,24 +28,62 @@
     </header>
 
     <main>
-        <section class="banner-slider">
-            <div class="slide active">
-                <img src="images/hero.jpg" alt="Banner 1">
-                <div class="caption">Nụ Cười Tỏa Sáng - Tương Lai Rạng Ngời</div>
+        <section class="banner">
+            <div class="container banner-content">
+                <h1>Nụ Cười Tỏa Sáng - Tương Lai Rạng Ngời</h1>
+                <p>Chào mừng đến với Dental Care. Chúng tôi cam kết mang lại trải nghiệm nha khoa êm ái, an toàn và hiệu quả nhất cho nụ cười của bạn.</p>
+                <button class="btn-main">Đặt Lịch Ngay</button>
             </div>
-            <div class="slide">
-                <img src="images/hero.jpg" alt="Banner 2" style="filter: hue-rotate(45deg);"> 
-                <div class="caption">Công Nghệ Nha Khoa Hiện Đại Nhất</div>
-            </div>
+            </section>
+
+        <section class="team container">
+            <h2 class="section-title">Đội Ngũ Chuyên Gia Hàng Đầu</h2>
             
-            <button class="prev-btn">&#10094;</button>
-            <button class="next-btn">&#10095;</button>
+            <div class="team-list">
+                <div class="doctor-item">
+                    <img src="images/doctor1.jpg" alt="Bác sĩ Nguyễn Văn A">
+                    <h3>BS. Nguyễn Văn A</h3>
+                    <p>Trưởng khoa Implant - 15 năm kinh nghiệm tu nghiệp tại Mỹ.</p>
+                </div>
+
+                <div class="doctor-item">
+                    <img src="images/doctor2.jpg" alt="Bác sĩ Trần Thị B">
+                    <h3>BS. Trần Thị B</h3>
+                    <p>Chuyên gia chỉnh nha - Niềng răng Invisalign cao cấp.</p>
+                </div>
+
+                <div class="doctor-item">
+                    <img src="images/doctor3.jpg" alt="Bác sĩ Lê Văn C">
+                    <h3>BS. Lê Văn C</h3>
+                    <p>Nha khoa thẩm mỹ & Phục hình răng sứ.</p>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <a href="about.html" class="btn-secondary">Xem Chi Tiết Đội Ngũ</a>
+            </div>
         </section>
 
-        <section class="container welcome-text">
-            <h2>Chào mừng đến với Dental Care</h2>
-            <p>Chúng tôi cam kết mang lại dịch vụ chăm sóc răng miệng tốt nhất với đội ngũ bác sĩ chuyên nghiệp và trang thiết bị hiện đại.</p>
+        <section class="services-preview container">
+            <h2 class="section-title">Chăm Sóc Răng Miệng Toàn Diện</h2>
+            
+            <div class="preview-content">
+                <img src="images/service-general.jpg" alt="Tổng quan dịch vụ nha khoa">
+                <p>Tại Dental Care, chúng tôi cung cấp đầy đủ các giải pháp từ nha khoa tổng quát, cạo vôi răng, trám răng đến các kỹ thuật phức tạp như cấy ghép Implant và phẫu thuật hàm mặt.</p>
+                <a href="services.html" class="btn-secondary">Khám Phá Dịch Vụ</a>
+            </div>
         </section>
+
+        <section class="promotion container">
+            <h2 class="section-title">Ưu Đãi Đặc Biệt Tháng Này</h2>
+            
+            <div class="promo-content">
+                <img src="images/promotion.jpg" alt="Khuyến mãi nha khoa">
+                <p>Giảm ngay <strong>20%</strong> chi phí cạo vôi răng và thăm khám tổng quát cho khách hàng đặt lịch lần đầu tiên qua website.</p>
+                <a href="contact.html" class="btn-main">Nhận Ưu Đãi Ngay</a>
+            </div>
+        </section>
+
     </main>
 
     <footer>
