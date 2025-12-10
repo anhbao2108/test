@@ -1,139 +1,111 @@
-/* --- 1. SETUP CHUNG (Biến & Reset) --- */
-:root {
-    --primary-blue: #007bff;
-    --accent-orange: #fd7e14;
-    --text-color: #333;
-    --gray-bg: #f8f9fa;
-    --border-color: #e9ecef;
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Tin Tức - Dental Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/news.css">
+</head>
+<body>
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text-color); line-height: 1.6; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-img { max-width: 100%; display: block; }
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-tooth"></i> Dental <span>Care</span>
+            </a>
+            <nav class="navbar">
+                <a href="index.html">Trang chủ</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="services.html">Dịch vụ</a>
+                <a href="news.html" class="active">Tin tức</a> <a href="contact.html">Liên hệ</a>
+            </nav>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
 
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
+    <main>
+        <section class="news-detail" id="news-detail">
+            <div class="container detail-container">
+                
+                <a href="news.html" class="back-link"><i class="fas fa-arrow-left"></i> Quay lại tin tức</a>
 
-/* --- 2. HEADER & FOOTER STYLE (Cơ bản) --- */
-.main-header {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky; top: 0; z-index: 1000;
-}
-.header-content {
-    display: flex; justify-content: space-between; align-items: center; height: 70px;
-}
-.logo { font-size: 1.5rem; text-transform: uppercase; }
-.main-nav ul { display: flex; gap: 20px; }
-.main-nav a { font-weight: 500; transition: color 0.3s; }
-.main-nav a:hover, .main-nav a.active { color: var(--primary-blue); }
-.btn-contact {
-    background: var(--accent-orange); color: white !important;
-    padding: 8px 20px; border-radius: 20px;
-}
-.mobile-menu-btn { display: none; font-size: 1.5rem; color: var(--primary-blue); cursor: pointer; }
+                <div class="detail-header anim-element">
+                    <h1 class="detail-title">Hướng dẫn chăm sóc răng miệng sau khi niềng</h1>
+                    <div class="detail-meta">
+                        <span><i class="fas fa-calendar"></i> 10/12/2023</span>
+                        <span><i class="fas fa-user"></i> Bs. Tuấn</span>
+                        <span><i class="fas fa-tag"></i> Kiến thức nha khoa</span>
+                    </div>
+                </div>
 
-.main-footer { background: #333; color: #fff; padding: 40px 0 20px; }
-.footer-content { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; }
-.footer-col { flex: 1; min-width: 250px; }
-.footer-col h3 { color: var(--accent-orange); margin-bottom: 15px; }
-.copyright { text-align: center; margin-top: 30px; border-top: 1px solid #555; padding-top: 15px; font-size: 0.9rem; }
+                <div class="detail-thumb anim-element">
+                    <img src="https://via.placeholder.com/800x450/16a085/ffffff?text=Anh+Chi+Tiet" alt="Chi tiết">
+                </div>
 
-/* --- 3. PAGE BANNER --- */
-.page-banner {
-    background-color: var(--gray-bg);
-    padding: 50px 0;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-}
-.page-banner h1 { color: var(--primary-blue); margin-bottom: 10px; font-size: 2rem; }
+                <div class="detail-content anim-element">
+                    <p class="intro">Niềng răng là giải pháp thẩm mỹ phổ biến, tuy nhiên việc chăm sóc răng miệng trong quá trình này đóng vai trò quyết định đến 50% sự thành công của ca điều trị.</p>
+                    
+                    <h3>1. Vệ sinh răng miệng đúng cách</h3>
+                    <p>Khi đeo mắc cài, thức ăn rất dễ bám vào kẽ răng và dây cung. Bạn cần sử dụng bàn chải kẽ chuyên dụng và chỉ nha khoa Superfloss để làm sạch.</p>
+                    
+                    <blockquote>
+                        "Hãy chải răng ít nhất 3 lần/ngày, đặc biệt là sau các bữa ăn chính để ngăn ngừa sâu răng và viêm nướu."
+                    </blockquote>
 
-/* --- 4. NEWS LIST LAYOUT (Trang News) --- */
-.news-section { padding: 50px 0; }
-.news-list { display: flex; flex-direction: column; gap: 30px; }
+                    <h3>2. Chế độ ăn uống hợp lý</h3>
+                    <p>Trong giai đoạn đầu, răng sẽ khá ê buốt. Bạn nên ưu tiên các loại thức ăn mềm như cháo, súp, sữa. Tránh xa đồ ăn quá cứng (xương, mía) hoặc quá dính (kẹo cao su, mạch nha).</p>
 
-.news-item {
-    display: flex;
-    background: #fff;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.news-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+                    <h3>3. Tái khám định kỳ</h3>
+                    <p>Tuân thủ lịch hẹn của bác sĩ để điều chỉnh lực siết răng và kiểm tra tiến độ di chuyển của răng.</p>
+                </div>
 
-.news-thumb { flex: 0 0 35%; overflow: hidden; }
-.news-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-.news-item:hover .news-thumb img { transform: scale(1.05); }
+                <div class="related-posts anim-element">
+                    <h3>Bài viết cùng chuyên mục</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Niềng răng trong suốt Invisalign giá bao nhiêu?</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Độ tuổi vàng để niềng răng cho trẻ em</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Quy trình nhổ răng khôn không đau</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
-.news-content { flex: 1; padding: 25px; display: flex; flex-direction: column; justify-content: center; }
-.news-title { font-size: 1.4rem; margin-bottom: 10px; line-height: 1.3; }
-.news-title a { color: var(--primary-blue); }
-.news-title a:hover { color: var(--accent-orange); }
+    <section class="footer">
+        <div class="container">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Liên kết nhanh</h3>
+                    <a href="index.html"> <i class="fas fa-chevron-right"></i> Trang chủ </a>
+                    <a href="services.html"> <i class="fas fa-chevron-right"></i> Dịch vụ </a>
+                    <a href="news.html"> <i class="fas fa-chevron-right"></i> Tin tức </a>
+                    <a href="contact.html"> <i class="fas fa-chevron-right"></i> Liên hệ </a>
+                </div>
+                <div class="box">
+                    <h3>Dịch vụ</h3>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> Chăm sóc răng </a>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> Niềng răng </a>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> Bọc sứ </a>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> Implant </a>
+                </div>
+                <div class="box">
+                    <h3>Thông tin</h3>
+                    <a href="#"> <i class="fas fa-phone"></i> +84 123 456 789 </a>
+                    <a href="#"> <i class="fas fa-envelope"></i> dentalcare@gmail.com </a>
+                    <a href="#"> <i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam </a>
+                </div>
+                <div class="box">
+                    <h3>Theo dõi</h3>
+                    <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
+                    <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+                    <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+                </div>
+            </div>
+            <div class="credit"> created by <span>Dental Care Team</span> | all rights reserved </div>
+        </div>
+    </section>
 
-.news-meta { color: #888; font-size: 0.85rem; margin-bottom: 15px; }
-.news-meta span { margin-right: 15px; }
-.news-meta i { color: var(--accent-orange); margin-right: 5px; }
-
-.news-desc {
-    margin-bottom: 20px; color: #555;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-}
-
-.btn-readmore {
-    align-self: flex-start;
-    color: var(--primary-blue); font-weight: 600;
-    border-bottom: 2px solid transparent;
-}
-.btn-readmore:hover { color: var(--accent-orange); border-bottom-color: var(--accent-orange); }
-
-/* --- 5. NEWS DETAIL LAYOUT (Trang Chi Tiết - MỚI) --- */
-.breadcrumb { padding: 20px 0; background: #fff; border-bottom: 1px solid #eee; }
-.breadcrumb a { color: #666; font-size: 0.9rem; }
-.breadcrumb a:hover { color: var(--primary-blue); }
-
-.detail-container { max-width: 800px; /* Nội dung chi tiết nhỏ hơn cho dễ đọc */ }
-
-.detail-title { font-size: 2rem; color: var(--primary-blue); margin-bottom: 15px; margin-top: 30px; }
-.detail-meta { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; color: #777; }
-.detail-meta span { margin-right: 20px; }
-
-.detail-image { margin-bottom: 30px; border-radius: 8px; overflow: hidden; }
-.detail-image img { width: 100%; }
-
-.detail-content { font-size: 1.1rem; color: #333; line-height: 1.8; margin-bottom: 50px; }
-.detail-content h3 { color: var(--primary-blue); margin-top: 30px; margin-bottom: 15px; font-size: 1.5rem; }
-.detail-content p { margin-bottom: 20px; text-align: justify; }
-.detail-content ul { list-style: disc; padding-left: 20px; margin-bottom: 20px; }
-.detail-content blockquote {
-    border-left: 5px solid var(--accent-orange);
-    background: #fff8f0; padding: 20px; margin: 30px 0; font-style: italic; color: #555;
-}
-
-.related-news { margin-top: 50px; padding-top: 30px; border-top: 2px solid var(--primary-blue); }
-.related-news h3 { margin-bottom: 20px; }
-.related-list li { margin-bottom: 10px; padding-left: 15px; position: relative; }
-.related-list li::before { content: "•"; color: var(--accent-orange); position: absolute; left: 0; font-weight: bold; }
-.related-list a:hover { color: var(--primary-blue); text-decoration: underline; }
-
-/* --- 6. ANIMATION (JS) --- */
-.anim-text { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
-.anim-text.visible { opacity: 1; transform: translateY(0); }
-
-/* --- 7. RESPONSIVE --- */
-@media (max-width: 768px) {
-    .header-content { padding: 0 15px; }
-    .mobile-menu-btn { display: block; }
-    .main-nav { display: none; /* Logic menu mobile cần thêm JS nếu muốn toggle */ }
-    
-    .news-item { flex-direction: column; }
-    .news-thumb { height: 200px; }
-    .news-content { padding: 20px; }
-    
-    .detail-title { font-size: 1.5rem; }
-} 
+    <script src="js/news.js"></script>
+</body>
+</html>
