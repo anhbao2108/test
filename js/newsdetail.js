@@ -1,84 +1,148 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const newsData = {
-        1: {
-            title: "5 Cách Chăm Sóc Răng Miệng Tại Nhà Hiệu Quả",
-            date: "10/12/2023",
-            author: "Bs. Tuấn",
-            image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Dental+Care",
+    1: {
+        title: "5 Cách Chăm Sóc Răng Miệng Tại Nhà Giúp Bảo Vệ Nụ Cười",
+        date: "10/12/2023",
+        author: "Bs. Tuấn",
+        image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Dental+Care",
 
-            content: `
+        content: `
+            <p>
+                Chăm sóc răng miệng đúng cách mỗi ngày là yếu tố quan trọng giúp duy trì
+                sức khỏe răng nướu và phòng ngừa các bệnh lý nha khoa phổ biến.
+                Nhiều người chỉ quan tâm đến răng khi có dấu hiệu đau nhức,
+                tuy nhiên việc phòng ngừa sớm luôn mang lại hiệu quả lâu dài hơn.
+            </p>
+
+            <h2>Tầm quan trọng của việc chăm sóc răng miệng</h2>
+            <p>
+                Khoang miệng là nơi vi khuẩn dễ dàng phát triển nếu không được làm sạch đúng cách.
+                Việc vệ sinh răng miệng kém có thể dẫn đến sâu răng, viêm nướu,
+                hơi thở có mùi và thậm chí ảnh hưởng đến sức khỏe toàn thân.
+            </p>
+
+            <div class="detail-image-inline">
+                <img src="https://via.placeholder.com/800x400/E64A19/ffffff?text=Oral+Health" alt="">
+                <span>Chăm sóc răng miệng đúng cách giúp ngăn ngừa nhiều bệnh lý nha khoa</span>
+            </div>
+
+            <h2>5 cách chăm sóc răng miệng hiệu quả tại nhà</h2>
+            <ul>
+                <li><strong>Đánh răng đúng cách:</strong> Ít nhất 2 lần mỗi ngày với kem đánh răng có fluor.</li>
+                <li><strong>Sử dụng chỉ nha khoa:</strong> Loại bỏ mảng bám ở kẽ răng.</li>
+                <li><strong>Súc miệng:</strong> Giúp làm sạch khoang miệng sau bữa ăn.</li>
+                <li><strong>Hạn chế đồ ngọt:</strong> Giảm nguy cơ sâu răng và viêm nướu.</li>
+                <li><strong>Khám nha khoa định kỳ:</strong> Phát hiện sớm và điều trị kịp thời.</li>
+            </ul>
+
+            <h2>Lời khuyên từ bác sĩ</h2>
+            <p>
+                Duy trì thói quen chăm sóc răng miệng khoa học không chỉ giúp bảo vệ nụ cười
+                mà còn tiết kiệm chi phí điều trị về sau.
+            </p>
+
+            <div class="service-cta">
+                <h3>Dịch vụ nha khoa tại Dental Care</h3>
                 <p>
-                    Chăm sóc răng miệng đúng cách không chỉ giúp bạn sở hữu nụ cười tự tin,
-                    mà còn đóng vai trò quan trọng trong việc bảo vệ sức khỏe tổng thể.
-                    Nhiều bệnh lý răng miệng nếu không điều trị kịp thời có thể gây biến chứng nguy hiểm.
+                    Dental Care cung cấp các dịch vụ thăm khám, làm sạch răng,
+                    tư vấn chăm sóc và điều trị nha khoa toàn diện.
                 </p>
+                <a href="services.html">Xem các dịch vụ nha khoa →</a>
+            </div>
+        `
+    },
 
-                <h2>Vì sao cần chăm sóc răng miệng mỗi ngày?</h2>
+    2: {
+        title: "Ưu Đãi Tháng 12: Giảm 20% Dịch Vụ Cạo Vôi Răng",
+        date: "08/12/2023",
+        author: "Admin",
+        image: "https://via.placeholder.com/900x450/E64A19/ffffff?text=Dental+Promotion",
+
+        content: `
+            <p>
+                Nhằm tri ân khách hàng trong dịp cuối năm,
+                Phòng khám Dental Care triển khai chương trình ưu đãi đặc biệt
+                với mức giảm 20% cho dịch vụ cạo vôi răng chuyên sâu.
+            </p>
+
+            <h2>Tại sao nên cạo vôi răng định kỳ?</h2>
+            <p>
+                Vôi răng là nguyên nhân chính gây viêm nướu, hôi miệng và chảy máu chân răng.
+                Nếu không được loại bỏ kịp thời, vôi răng có thể dẫn đến viêm nha chu
+                và mất răng sớm.
+            </p>
+
+            <div class="detail-image-inline">
+                <img src="https://via.placeholder.com/800x400/0056b3/ffffff?text=Scaling" alt="">
+                <span>Cạo vôi răng định kỳ giúp bảo vệ nướu và men răng</span>
+            </div>
+
+            <h2>Nội dung chương trình ưu đãi</h2>
+            <ul>
+                <li>Giảm ngay <strong>20%</strong> dịch vụ cạo vôi răng.</li>
+                <li>Áp dụng trong suốt tháng 12.</li>
+                <li>Áp dụng cho khách hàng đặt lịch trước.</li>
+            </ul>
+
+            <div class="service-cta">
+                <h3>Trải nghiệm dịch vụ tại Dental Care</h3>
                 <p>
-                    Răng miệng là nơi vi khuẩn dễ sinh sôi nếu không được làm sạch đúng cách.
-                    Việc vệ sinh kém có thể dẫn đến sâu răng, viêm lợi, hôi miệng và ảnh hưởng
-                    đến tim mạch cũng như hệ tiêu hóa.
+                    Chúng tôi sử dụng trang thiết bị hiện đại,
+                    quy trình an toàn và đội ngũ bác sĩ giàu kinh nghiệm.
                 </p>
+                <a href="services.html">Tìm hiểu các dịch vụ Dental Care →</a>
+            </div>
+        `
+    },
 
-                <div class="detail-image-inline">
-                    <img src="https://via.placeholder.com/800x400/E64A19/ffffff?text=Oral+Health+Care" alt="Chăm sóc răng miệng">
-                    <span>Hình ảnh: Quy trình chăm sóc răng miệng đúng cách tại nhà</span>
-                </div>
+    3: {
+        title: "Niềng Răng Trong Suốt: Giải Pháp Chỉnh Nha Hiện Đại",
+        date: "05/12/2023",
+        author: "Bs. Lan",
+        image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Invisible+Braces",
 
-                <h2>5 cách chăm sóc răng miệng hiệu quả tại nhà</h2>
-                <ul>
-                    <li><strong>Đánh răng đúng cách:</strong> Ít nhất 2 lần mỗi ngày, mỗi lần 2 phút.</li>
-                    <li><strong>Sử dụng chỉ nha khoa:</strong> Làm sạch mảng bám ở kẽ răng.</li>
-                    <li><strong>Súc miệng:</strong> Dùng dung dịch súc miệng sau khi ăn.</li>
-                    <li><strong>Hạn chế đồ ngọt:</strong> Tránh tạo môi trường cho vi khuẩn phát triển.</li>
-                    <li><strong>Khám nha khoa định kỳ:</strong> 6 tháng/lần để phát hiện sớm vấn đề.</li>
-                </ul>
+        content: `
+            <p>
+                Niềng răng trong suốt là phương pháp chỉnh nha hiện đại,
+                được nhiều khách hàng lựa chọn nhờ tính thẩm mỹ cao và sự tiện lợi.
+            </p>
 
-                <div class="detail-image-inline">
-                    <img src="https://via.placeholder.com/800x400/0056b3/ffffff?text=Dental+Checkup" alt="Khám răng định kỳ">
-                    <span>Hình ảnh: Khám răng định kỳ giúp phát hiện sớm bệnh lý</span>
-                </div>
+            <h2>Niềng răng trong suốt là gì?</h2>
+            <p>
+                Phương pháp này sử dụng khay niềng trong suốt được thiết kế riêng,
+                giúp dịch chuyển răng dần về đúng vị trí mà không cần mắc cài kim loại.
+            </p>
 
-                <h2>Lời khuyên từ bác sĩ Dental Care</h2>
+            <div class="detail-image-inline">
+                <img src="https://via.placeholder.com/800x400/E64A19/ffffff?text=Orthodontic" alt="">
+                <span>Niềng răng trong suốt mang lại tính thẩm mỹ cao</span>
+            </div>
+
+            <h2>Ưu và nhược điểm</h2>
+            <ul>
+                <li><strong>Ưu điểm:</strong> Thẩm mỹ, dễ tháo lắp, vệ sinh thuận tiện.</li>
+                <li><strong>Nhược điểm:</strong> Chi phí cao hơn, yêu cầu tuân thủ nghiêm ngặt.</li>
+            </ul>
+
+            <h2>Lời khuyên từ bác sĩ chỉnh nha</h2>
+            <p>
+                Trước khi lựa chọn phương pháp niềng răng,
+                khách hàng nên được thăm khám và tư vấn kỹ lưỡng
+                để đảm bảo hiệu quả điều trị tối ưu.
+            </p>
+
+            <div class="service-cta">
+                <h3>Dịch vụ chỉnh nha tại Dental Care</h3>
                 <p>
-                    Việc hình thành thói quen chăm sóc răng miệng khoa học ngay từ hôm nay
-                    sẽ giúp bạn tiết kiệm chi phí điều trị về sau và duy trì sức khỏe răng miệng lâu dài.
-                    Nếu có dấu hiệu đau nhức, ê buốt, hãy đến Phòng khám Dental Care để được tư vấn sớm.
+                    Dental Care cung cấp các giải pháp chỉnh nha phù hợp
+                    với từng tình trạng răng miệng.
                 </p>
-            `
-        },
-
-        2: {
-            title: "Khuyến Mãi Tháng 12: Giảm 20% Dịch Vụ Cạo Vôi",
-            date: "08/12/2023",
-            author: "Admin",
-            image: "https://via.placeholder.com/900x450/E64A19/ffffff?text=Promotion",
-            content: `
-                <p>
-                    Dental Care triển khai chương trình ưu đãi đặc biệt nhằm tri ân khách hàng
-                    trong tháng 12 với mức giảm 20% cho dịch vụ cạo vôi răng.
-                </p>
-                <p>Chương trình áp dụng cho tất cả khách hàng khi đặt lịch trước.</p>
-            `
-        },
-
-        3: {
-            title: "Niềng Răng Trong Suốt: Có Phải Là Giải Pháp Phù Hợp?",
-            date: "05/12/2023",
-            author: "Bs. Lan",
-            image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Invisible+Braces",
-            content: `
-                <p>
-                    Niềng răng trong suốt là phương pháp chỉnh nha hiện đại,
-                    được nhiều người lựa chọn nhờ tính thẩm mỹ cao.
-                </p>
-                <p>
-                    Tuy nhiên, phương pháp này đòi hỏi sự tuân thủ nghiêm ngặt theo hướng dẫn của bác sĩ.
-                </p>
-            `
-        }
-    };
+                <a href="services.html">Xem dịch vụ chỉnh nha →</a>
+            </div>
+        `
+    }
+};
 
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
