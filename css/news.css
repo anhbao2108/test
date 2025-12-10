@@ -1,42 +1,139 @@
-.page-title {
-    text-align: center;
-    color: #0056b3;
-    margin: 40px 0;
+/* --- 1. SETUP CHUNG (Biến & Reset) --- */
+:root {
+    --primary-blue: #007bff;
+    --accent-orange: #fd7e14;
+    --text-color: #333;
+    --gray-bg: #f8f9fa;
+    --border-color: #e9ecef;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--text-color); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- 2. HEADER & FOOTER STYLE (Cơ bản) --- */
+.main-header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky; top: 0; z-index: 1000;
+}
+.header-content {
+    display: flex; justify-content: space-between; align-items: center; height: 70px;
+}
+.logo { font-size: 1.5rem; text-transform: uppercase; }
+.main-nav ul { display: flex; gap: 20px; }
+.main-nav a { font-weight: 500; transition: color 0.3s; }
+.main-nav a:hover, .main-nav a.active { color: var(--primary-blue); }
+.btn-contact {
+    background: var(--accent-orange); color: white !important;
+    padding: 8px 20px; border-radius: 20px;
+}
+.mobile-menu-btn { display: none; font-size: 1.5rem; color: var(--primary-blue); cursor: pointer; }
+
+.main-footer { background: #333; color: #fff; padding: 40px 0 20px; }
+.footer-content { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; }
+.footer-col { flex: 1; min-width: 250px; }
+.footer-col h3 { color: var(--accent-orange); margin-bottom: 15px; }
+.copyright { text-align: center; margin-top: 30px; border-top: 1px solid #555; padding-top: 15px; font-size: 0.9rem; }
+
+/* --- 3. PAGE BANNER --- */
+.page-banner {
+    background-color: var(--gray-bg);
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+.page-banner h1 { color: var(--primary-blue); margin-bottom: 10px; font-size: 2rem; }
+
+/* --- 4. NEWS LIST LAYOUT (Trang News) --- */
+.news-section { padding: 50px 0; }
+.news-list { display: flex; flex-direction: column; gap: 30px; }
 
 .news-item {
     display: flex;
-    margin-bottom: 30px;
     background: #fff;
-    padding: 20px;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.news-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.news-thumb { flex: 0 0 35%; overflow: hidden; }
+.news-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.news-item:hover .news-thumb img { transform: scale(1.05); }
+
+.news-content { flex: 1; padding: 25px; display: flex; flex-direction: column; justify-content: center; }
+.news-title { font-size: 1.4rem; margin-bottom: 10px; line-height: 1.3; }
+.news-title a { color: var(--primary-blue); }
+.news-title a:hover { color: var(--accent-orange); }
+
+.news-meta { color: #888; font-size: 0.85rem; margin-bottom: 15px; }
+.news-meta span { margin-right: 15px; }
+.news-meta i { color: var(--accent-orange); margin-right: 5px; }
+
+.news-desc {
+    margin-bottom: 20px; color: #555;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 
-.news-item img {
-    width: 250px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 20px;
-    border-radius: 4px;
+.btn-readmore {
+    align-self: flex-start;
+    color: var(--primary-blue); font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+.btn-readmore:hover { color: var(--accent-orange); border-bottom-color: var(--accent-orange); }
+
+/* --- 5. NEWS DETAIL LAYOUT (Trang Chi Tiết - MỚI) --- */
+.breadcrumb { padding: 20px 0; background: #fff; border-bottom: 1px solid #eee; }
+.breadcrumb a { color: #666; font-size: 0.9rem; }
+.breadcrumb a:hover { color: var(--primary-blue); }
+
+.detail-container { max-width: 800px; /* Nội dung chi tiết nhỏ hơn cho dễ đọc */ }
+
+.detail-title { font-size: 2rem; color: var(--primary-blue); margin-bottom: 15px; margin-top: 30px; }
+.detail-meta { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; color: #777; }
+.detail-meta span { margin-right: 20px; }
+
+.detail-image { margin-bottom: 30px; border-radius: 8px; overflow: hidden; }
+.detail-image img { width: 100%; }
+
+.detail-content { font-size: 1.1rem; color: #333; line-height: 1.8; margin-bottom: 50px; }
+.detail-content h3 { color: var(--primary-blue); margin-top: 30px; margin-bottom: 15px; font-size: 1.5rem; }
+.detail-content p { margin-bottom: 20px; text-align: justify; }
+.detail-content ul { list-style: disc; padding-left: 20px; margin-bottom: 20px; }
+.detail-content blockquote {
+    border-left: 5px solid var(--accent-orange);
+    background: #fff8f0; padding: 20px; margin: 30px 0; font-style: italic; color: #555;
 }
 
-.news-content h3 {
-    color: #0056b3;
-    margin-bottom: 10px;
-}
+.related-news { margin-top: 50px; padding-top: 30px; border-top: 2px solid var(--primary-blue); }
+.related-news h3 { margin-bottom: 20px; }
+.related-list li { margin-bottom: 10px; padding-left: 15px; position: relative; }
+.related-list li::before { content: "•"; color: var(--accent-orange); position: absolute; left: 0; font-weight: bold; }
+.related-list a:hover { color: var(--primary-blue); text-decoration: underline; }
 
-/* Class để JS xử lý hiệu ứng */
-.fade-text {
-    opacity: 0; /* Ẩn ban đầu */
-    transition: opacity 2s ease-in; /* Hiệu ứng hiện dần trong 2s */
-}
+/* --- 6. ANIMATION (JS) --- */
+.anim-text { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+.anim-text.visible { opacity: 1; transform: translateY(0); }
 
-.visible {
-    opacity: 1; /* Hiện ra */
-}
-/* Hover vào tiêu đề bài viết thì ra màu cam */
-.news-content h3:hover {
-    color: #e64a19;
-    cursor: pointer;
+/* --- 7. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .header-content { padding: 0 15px; }
+    .mobile-menu-btn { display: block; }
+    .main-nav { display: none; /* Logic menu mobile cần thêm JS nếu muốn toggle */ }
+    
+    .news-item { flex-direction: column; }
+    .news-thumb { height: 200px; }
+    .news-content { padding: 20px; }
+    
+    .detail-title { font-size: 1.5rem; }
 }
