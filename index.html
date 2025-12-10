@@ -1,103 +1,78 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - Phòng Khám Nha Khoa</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo"><h1>Dental Care</h1></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Trang Chủ</a></li>
-                    <li><a href="about.html">Giới Thiệu</a></li>
-                    <li><a href="services.html">Dịch Vụ</a></li>
-                    <li><a href="news.html">Tin Tức</a></li>
-                    <li><a href="contact.html">Liên Hệ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+$(document).ready(function() {
+    /* ========================================== */
+    /* 1. LOGIC CHO BANNER SLIDESHOW              */
+    /* ========================================== */
+    
+    // Lấy danh sách các slide
+    const slides = $('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let autoSlideInterval;
 
-    <main>
-        <section class="banner-slider">
-            <div class="slide active">
-                <img src="images/hero.jpg" alt="Banner 1">
-                <div class="caption">Nụ Cười Tỏa Sáng - Tương Lai Rạng Ngời</div>
-            </div>
-            <div class="slide">
-                <img src="images/hero.jpg" alt="Banner 2" style="filter: hue-rotate(45deg);"> 
-                <div class="caption">Công Nghệ Nha Khoa Hiện Đại Nhất</div>
-            </div>
+    // Kiểm tra xem trang có slider không (để tránh lỗi nếu dùng file này cho trang khác)
+    if (totalSlides > 0) {
+        
+        // Hàm hiển thị slide cụ thể
+        function showSlide(index) {
+            // Ẩn slide hiện tại (dùng hiệu ứng fadeOut của jQuery)
+            slides.fadeOut(500).removeClass('active');
             
-            <button class="prev-btn">&#10094;</button>
-            <button class="next-btn">&#10095;</button>
-        </section>
+            // Hiện slide mới
+            $(slides[index]).fadeIn(500).addClass('active');
+            currentSlide = index; // Cập nhật slide hiện tại
+        }
 
-        <section class="container welcome-text">
-            <h2>Chào mừng đến với Dental Care</h2>
-            <p>Chúng tôi cam kết mang lại dịch vụ chăm sóc răng miệng tốt nhất với đội ngũ bác sĩ chuyên nghiệp và trang thiết bị hiện đại.</p>
-        </section>
+        // Hàm bắt đầu chạy tự động
+        function startAutoSlide() {
+            // Xóa interval cũ nếu có để tránh chạy chồng chéo
+            if (autoSlideInterval) clearInterval(autoSlideInterval);
+            
+            autoSlideInterval = setInterval(function() {
+                // Tăng index, nếu hết thì quay về 0
+                let nextSlide = (currentSlide + 1) % totalSlides;
+                showSlide(nextSlide);
+            }, 4000); // 4000ms = 4 giây chuyển 1 lần
+        }
 
-        <section class="section-doctors">
-            <div class="container">
-                <h2 class="section-title">Đội Ngũ Chuyên Gia</h2>
-                <div class="doctor-grid">
-                    <div class="doctor-card">
-                        <img src="images/doctor1.jpg" alt="BS A">
-                        <h3>BS. Nguyễn Văn A</h3>
-                        <p>Chuyên gia Implant</p>
-                    </div>
-                    <div class="doctor-card">
-                        <img src="images/doctor2.jpg" alt="BS B">
-                        <h3>BS. Trần Thị B</h3>
-                        <p>Niềng răng thẩm mỹ</p>
-                    </div>
-                    <div class="doctor-card">
-                        <img src="images/doctor3.jpg" alt="BS C">
-                        <h3>BS. Lê Văn C</h3>
-                        <p>Nha khoa tổng quát</p>
-                    </div>
-                </div>
-                <a href="about.html" class="btn-doctor-detail">Xem Chi Tiết Đội Ngũ</a>
-            </div>
-        </section>
+        // --- XỬ LÝ SỰ KIỆN CLICK NÚT ---
 
-        <section class="section-services-highlight">
-            <div class="container">
-                <img class="wide-image" src="images/service-general.jpg" alt="Dịch vụ nha khoa">
-                
-                <div class="content-block">
-                    <h2>Chăm Sóc Răng Miệng Toàn Diện</h2>
-                    <p>Dental Care cung cấp các giải pháp nha khoa không đau, hỗ trợ trả góp lãi suất 0%. Chúng tôi áp dụng công nghệ Scan 3D tiên tiến nhất.</p>
-                    <a href="services.html" class="btn-main-accent">Xem Tất Cả Dịch Vụ</a>
-                </div>
-            </div>
-        </section>
+        // 1. Nút Next (Tiếp theo)
+        $('.next-btn').click(function() {
+            clearInterval(autoSlideInterval); // Tạm dừng tự động
+            let nextSlide = (currentSlide + 1) % totalSlides;
+            showSlide(nextSlide);
+            startAutoSlide(); // Khởi động lại tự động
+        });
 
-        <section class="section-promo">
-            <div class="container">
-                <img class="wide-image" src="images/promotion.jpg" alt="Khuyến mãi">
+        // 2. Nút Prev (Lùi lại)
+        $('.prev-btn').click(function() {
+            clearInterval(autoSlideInterval); // Tạm dừng tự động
+            // Công thức lùi vòng tròn (nếu về âm thì nhảy xuống cuối)
+            let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prevSlide);
+            startAutoSlide(); // Khởi động lại tự động
+        });
 
-                <div class="content-block">
-                    <h2>Ưu Đãi Tháng 12</h2>
-                    <p class="promo-highlight">GIẢM 20% CẠO VÔI RĂNG</p>
-                    <p>Dành riêng cho khách hàng đặt lịch online lần đầu tiên.</p>
-                    <a href="contact.html" class="btn-book-now">Đặt Lịch Ngay</a>
-                </div>
-            </div>
-        </section>
-    </main>
+        // Đảm bảo slide đầu tiên được hiện khi load trang và bắt đầu chạy tự động
+        showSlide(currentSlide); 
+        startAutoSlide();
+    }
 
-    <footer>
-        <p>&copy; 2024 Phòng Khám Nha Khoa Dental Care.</p>
-    </footer>
-
-    <script src="js/home.js"></script>
-</body>
-</html>
+    /* ========================================== */
+    /* 2. HIỆU ỨNG CUỘN TRANG (SCROLL ANIMATION)  */
+    /* (Mặc dù không dùng trong CSS mới, nhưng giữ lại code nếu cần)   */
+    /* ========================================== */
+    
+    // Nếu bạn muốn thêm hiệu ứng, hãy thêm CSS cho các section và bật đoạn này.
+    /*
+    $(window).scroll(function() {
+        var scrollPos = $(window).scrollTop() + $(window).height() - 150; // Giảm offset
+        
+        $('.section-doctors, .section-services-highlight, .section-promo').each(function() {
+            if (scrollPos > $(this).offset().top) {
+                $(this).addClass('is-visible'); 
+            }
+        });
+    });
+    */
+});
