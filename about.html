@@ -1,122 +1,82 @@
-/* ========================================= */
-/* 1. SECTION GIỚI THIỆU (INTRO)             */
-/* ========================================= */
-.about-intro {
-    text-align: center;
-    padding: 60px 0;
-    max-width: 800px; /* Giới hạn chiều rộng cho dễ đọc */
-    margin: 0 auto;
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Phòng Khám Nha Khoa Dental Care</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
 
-.about-intro p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-}
+    <header>
+        <div class="container">
+            <div class="logo"><h1>Dental Care</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html" class="active">Giới Thiệu</a></li>
+                    <li><a href="services.html">Dịch Vụ</a></li>
+                    <li><a href="news.html">Tin Tức</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-/* ========================================= */
-/* 2. SECTION ĐỘI NGŨ BÁC SĨ (TEAM)          */
-/* ========================================= */
-.team {
-    padding-bottom: 60px;
-}
+    <main>
+        <section class="about-intro container">
+            <h2 class="section-title">Câu Chuyện Của Chúng Tôi</h2>
+            <p>
+                Được thành lập từ năm 2010, Dental Care tự hào là đơn vị tiên phong áp dụng công nghệ nha khoa không đau chuẩn Châu Âu. 
+                Với sứ mệnh "Kiến tạo nụ cười hạnh phúc", chúng tôi cam kết mang đến trải nghiệm điều trị êm ái, an toàn và thẩm mỹ nhất cho mọi khách hàng.
+            </p>
+        </section>
 
-.team-list {
-    display: flex;
-    flex-direction: column; /* Xếp các bác sĩ theo hàng dọc */
-    gap: 50px; /* Khoảng cách giữa các bác sĩ */
-}
+        <section class="team container">
+            <h2 class="section-title">Đội Ngũ Chuyên Gia</h2>
+            
+            <div class="team-list">
+                <div class="doctor-item">
+                    <div class="doctor-img-wrapper">
+                        <img src="images/doctor1.jpg" alt="Bác sĩ Nguyễn Văn A">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>BS. CKII Nguyễn Văn A</h3>
+                        <p class="role">Giám Đốc Chuyên Môn</p>
+                        <p class="desc">Hơn 20 năm kinh nghiệm trong lĩnh vực Cấy ghép Implant và Phẫu thuật hàm mặt. Từng tu nghiệp chuyên sâu tại Đại học Harvard (Mỹ).</p>
+                    </div>
+                </div>
 
-/* Layout từng thẻ bác sĩ: Flexbox 2 Cột */
-.doctor-item {
-    display: flex; /* Kích hoạt layout ngang */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    overflow: hidden; /* Bo góc mượt mà */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
+                <div class="doctor-item">
+                    <div class="doctor-img-wrapper">
+                        <img src="images/doctor2.jpg" alt="Bác sĩ Trần Thị B">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>ThS. BS Trần Thị B</h3>
+                        <p class="role">Trưởng Khoa Chỉnh Nha</p>
+                        <p class="desc">Chuyên gia hạng Platinum về niềng răng Invisalign. Đã kiến tạo thành công hơn 3.000 nụ cười rạng rỡ cho khách hàng trẻ tuổi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-/* Cột Trái: Ảnh (Chiếm 40%) */
-.doctor-img-wrapper {
-    flex: 0 0 40%; 
-    height: 300px;
-    overflow: hidden; /* Bắt buộc có để hiệu ứng zoom không bị tràn */
-}
+        <section class="location">
+            <div class="container">
+                <h2 class="section-title">Thông Tin Liên Hệ</h2>
+                <div class="location-info">
+                    <p><strong>📍 Địa chỉ:</strong> 123 Đường Nguyễn Văn Cừ, Quận 5, TP.HCM</p>
+                    <p><strong>📞 Hotline:</strong> 1900 1234 - 0909 888 999</p>
+                    <p><strong>⏰ Giờ làm việc:</strong> 08:00 - 20:00 (Tất cả các ngày trong tuần)</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-.doctor-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    /* Hiệu ứng chuyển động mượt */
-    transition: transform 0.5s ease;
-}
+    <footer>
+        <p>&copy; 2024 Phòng Khám Nha Khoa Dental Care.</p>
+    </footer>
 
-/* HOVER: Phóng to ảnh nhẹ */
-.doctor-img-wrapper:hover img {
-    transform: scale(1.1); /* Phóng to 110% */
-}
-
-/* Cột Phải: Thông tin (Chiếm phần còn lại) */
-.doctor-info {
-    padding: 30px;
-    flex: 1;
-}
-
-.doctor-info h3 {
-    color: #0056b3; /* Xanh Y Tế */
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-.doctor-info .role {
-    color: #e64a19; /* Cam Điểm Nhấn */
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.doctor-info .desc {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Responsive cho Mobile: Chuyển về 1 cột dọc */
-@media (max-width: 768px) {
-    .doctor-item {
-        flex-direction: column; /* Ảnh trên, chữ dưới */
-    }
-    .doctor-img-wrapper {
-        flex: none;
-        width: 100%;
-        height: 250px;
-    }
-}
-
-/* ========================================= */
-/* 3. SECTION ĐỊA CHỈ (LOCATION)             */
-/* ========================================= */
-.location {
-    background-color: #f4f8fb; /* Nền xanh rất nhạt */
-    padding: 50px 0;
-    text-align: center;
-    border-top: 1px solid #ddd;
-}
-
-.location-info {
-    background: white;
-    display: inline-block;
-    padding: 30px 50px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-bottom: 4px solid #0056b3;
-}
-
-.location-info p {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #333;
-}
+    <script src="js/about.js"></script>
+</body>
+</html>
