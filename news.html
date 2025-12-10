@@ -3,120 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Tin Tức - Dental Care</title>
+    <title>Tin Tức - Dental Care</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css"> 
     
     <link rel="stylesheet" href="css/news.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-tooth"></i> Dental <span>Care</span>
-            </a>
-
-            <nav class="navbar">
-                <a href="index.html">Trang chủ</a>
-                <a href="about.html">Giới thiệu</a>
-                <a href="services.html">Dịch vụ</a>
-                <a href="news.html" class="active">Tin tức</a>
-                <a href="contact.html">Liên hệ</a>
-            </nav>
-
-            <div id="menu-btn" class="fas fa-bars"></div>
-        </div>
-    </header>
-
+    <div id="header-placeholder"></div>
     <main>
-        <section class="news-detail" id="news-detail">
-            <div class="container detail-container">
+        <section class="news-section">
+            <div class="container">
                 
-                <a href="news.html" class="back-link">
-                    <i class="fas fa-arrow-left"></i> Quay lại tin tức
-                </a>
+                <h1 class="page-title">Tin Tức & Sự Kiện</h1>
 
-                <div class="detail-header">
-                    <h1 class="detail-title">Hướng dẫn chăm sóc răng miệng sau khi niềng</h1>
-                    <div class="detail-meta">
-                        <span><i class="fas fa-calendar"></i> 10/12/2023</span>
-                        <span><i class="fas fa-user"></i> Bs. Tuấn</span>
-                        <span><i class="fas fa-tag"></i> Kiến thức nha khoa</span>
-                    </div>
+                <div class="news-list">
+
+                    <article class="news-item fade-in-section" data-id="1">
+                        <div class="news-thumb-wrapper">
+                            <img class="news-thumb" src="https://via.placeholder.com/400x300/0056b3/ffffff?text=Dental+News+1" alt="Chăm sóc răng miệng">
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title"><a href="#">Hướng dẫn chăm sóc răng miệng sau khi niềng</a></h3>
+                            <p class="news-meta">
+                                <span class="date"><i class="far fa-calendar-alt"></i> 10/12/2023</span>
+                                <span class="author"><i class="far fa-user"></i> Bs. Tuấn</span>
+                            </p>
+                            <p class="news-excerpt">
+                                Niềng răng là một hành trình dài đòi hỏi sự kiên nhẫn. Việc vệ sinh răng miệng đúng cách giúp bạn tránh được các bệnh lý và đạt kết quả thẩm mỹ tốt nhất sau khi tháo mắc cài.
+                            </p>
+                            <a href="#" class="read-more">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="news-item fade-in-section" data-id="2">
+                        <div class="news-thumb-wrapper">
+                            <img class="news-thumb" src="https://via.placeholder.com/400x300/E64A19/ffffff?text=Dental+News+2" alt="Khuyến mãi bọc sứ">
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title"><a href="#">Ưu đãi giảm 30% dịch vụ bọc răng sứ thẩm mỹ</a></h3>
+                            <p class="news-meta">
+                                <span class="date"><i class="far fa-calendar-alt"></i> 08/12/2023</span>
+                                <span class="author"><i class="far fa-user"></i> Admin</span>
+                            </p>
+                            <p class="news-excerpt">
+                                Chương trình khuyến mãi đặc biệt tháng này dành cho khách hàng đăng ký dịch vụ bọc răng sứ trọn gói. Cơ hội sở hữu nụ cười tỏa nắng với chi phí tối ưu nhất trong năm.
+                            </p>
+                            <a href="#" class="read-more">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="news-item fade-in-section" data-id="3">
+                        <div class="news-thumb-wrapper">
+                            <img class="news-thumb" src="https://via.placeholder.com/400x300/0056b3/ffffff?text=Dental+News+3" alt="Lấy cao răng">
+                        </div>
+                        <div class="news-content">
+                            <h3 class="news-title"><a href="#">Tại sao nên lấy cao răng định kỳ 6 tháng/lần?</a></h3>
+                            <p class="news-meta">
+                                <span class="date"><i class="far fa-calendar-alt"></i> 05/12/2023</span>
+                                <span class="author"><i class="far fa-user"></i> Bs. Lan</span>
+                            </p>
+                            <p class="news-excerpt">
+                                Cao răng là nguyên nhân chính gây ra viêm lợi, tụt lợi và hôi miệng. Tìm hiểu quy trình lấy cao răng bằng máy siêu âm không đau, không ê buốt tại phòng khám Dental Care.
+                            </p>
+                            <a href="#" class="read-more">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
                 </div>
-
-                <div class="detail-thumb">
-                    <img src="https://via.placeholder.com/800x450/16a085/ffffff?text=Hinh+Anh+Minh+Hoa" alt="Chi tiết bài viết">
-                </div>
-
-                <div class="detail-content">
-                    <p class="intro">Niềng răng là giải pháp thẩm mỹ phổ biến, tuy nhiên việc chăm sóc răng miệng trong quá trình này đóng vai trò quyết định đến 50% sự thành công của ca điều trị.</p>
-                    
-                    <h3>1. Vệ sinh răng miệng đúng cách</h3>
-                    <p>Khi đeo mắc cài, thức ăn rất dễ bám vào kẽ răng và dây cung. Bạn cần sử dụng bàn chải kẽ chuyên dụng và chỉ nha khoa Superfloss để làm sạch.</p>
-                    
-                    <blockquote>
-                        "Hãy chải răng ít nhất 3 lần/ngày, đặc biệt là sau các bữa ăn chính để ngăn ngừa sâu răng và viêm nướu."
-                    </blockquote>
-
-                    <h3>2. Chế độ ăn uống hợp lý</h3>
-                    <p>Trong giai đoạn đầu, răng sẽ khá ê buốt. Bạn nên ưu tiên các loại thức ăn mềm như cháo, súp, sữa. Tránh xa đồ ăn quá cứng (xương, mía) hoặc quá dính (kẹo cao su, mạch nha).</p>
-
-                    <h3>3. Tái khám định kỳ</h3>
-                    <p>Tuân thủ lịch hẹn của bác sĩ để điều chỉnh lực siết răng và kiểm tra tiến độ di chuyển của răng.</p>
-                </div>
-
-                <div class="related-posts">
-                    <h3>Bài viết cùng chuyên mục</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Niềng răng trong suốt Invisalign giá bao nhiêu?</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Độ tuổi vàng để niềng răng cho trẻ em</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Quy trình nhổ răng khôn không đau</a></li>
-                    </ul>
-                </div>
-
             </div>
         </section>
     </main>
 
-    <section class="footer">
-        <div class="container">
-            <div class="box-container">
-                <div class="box">
-                    <h3>Liên kết nhanh</h3>
-                    <a href="index.html"> <i class="fas fa-chevron-right"></i> Trang chủ </a>
-                    <a href="services.html"> <i class="fas fa-chevron-right"></i> Dịch vụ </a>
-                    <a href="news.html"> <i class="fas fa-chevron-right"></i> Tin tức </a>
-                    <a href="contact.html"> <i class="fas fa-chevron-right"></i> Liên hệ </a>
-                </div>
-
-                <div class="box">
-                    <h3>Dịch vụ</h3>
-                    <a href="#"> <i class="fas fa-chevron-right"></i> Chăm sóc răng </a>
-                    <a href="#"> <i class="fas fa-chevron-right"></i> Niềng răng </a>
-                    <a href="#"> <i class="fas fa-chevron-right"></i> Bọc sứ </a>
-                    <a href="#"> <i class="fas fa-chevron-right"></i> Implant </a>
-                </div>
-
-                <div class="box">
-                    <h3>Thông tin</h3>
-                    <a href="#"> <i class="fas fa-phone"></i> +84 123 456 789 </a>
-                    <a href="#"> <i class="fas fa-envelope"></i> dentalcare@gmail.com </a>
-                    <a href="#"> <i class="fas fa-map-marker-alt"></i> Hà Nội, Việt Nam </a>
-                </div>
-
-                <div class="box">
-                    <h3>Theo dõi</h3>
-                    <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
-                    <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
-                    <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
-                </div>
-            </div>
-            <div class="credit"> created by <span>Dental Care Team</span> | all rights reserved </div>
-        </div>
-    </section>
-
+    <div id="footer-placeholder"></div>
     <script src="js/news.js"></script>
 </body>
 </html>
