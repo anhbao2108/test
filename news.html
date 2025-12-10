@@ -3,131 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tin Tức - Nha Khoa Sài Gòn Smile</title>
+    <title>Tin Tức - Dental Care</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="css/news.css">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <a href="index.html">
-                    <span style="color: var(--primary-blue); font-weight:bold;">DENTAL</span>
-                    <span style="color: var(--accent-orange); font-weight:bold;">CLINIC</span>
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="about.html">Giới thiệu</a></li>
-                    <li><a href="services.html">Dịch vụ</a></li>
-                    <li><a href="news.html" class="active">Tin tức</a></li>
-                    <li><a href="contact.html" class="btn-contact">Liên hệ</a></li>
-                </ul>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-tooth"></i> Dental <span>Care</span>
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Trang chủ</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="services.html">Dịch vụ</a>
+                <a href="news.html" class="active">Tin tức</a>
+                <a href="contact.html">Liên hệ</a>
             </nav>
-            <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+
+            <div id="menu-btn" class="fas fa-bars"></div>
         </div>
     </header>
 
     <main>
-        <section class="page-banner">
+        <section class="home-news" id="home-news">
             <div class="container">
-                <h1>Tin Tức & Kiến Thức</h1>
-                <p>Cập nhật thông tin nha khoa mới nhất từ chuyên gia</p>
-            </div>
-        </section>
-
-        <section class="news-section">
-            <div class="container">
-                <div class="news-list">
-
-                    <article class="news-item">
-                        <div class="news-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Nieng+Rang" alt="Niềng răng">
-                            </a>
+                <h1 class="heading">Tin Tức <span>Nha Khoa</span></h1>
+                
+                <div class="news-container">
+                    <div class="news-box anim-element">
+                        <div class="image">
+                            <img src="https://via.placeholder.com/400x300/16a085/ffffff?text=Nieng+Rang" alt="Niềng răng">
                         </div>
-                        <div class="news-content">
-                            <h2 class="news-title anim-text"><a href="news-detail.html">Cách chăm sóc răng miệng sau khi niềng răng</a></h2>
-                            <div class="news-meta anim-text">
-                                <span class="date"><i class="far fa-calendar-alt"></i> 10/12/2023</span>
-                                <span class="author"><i class="far fa-user"></i> Bs. Minh</span>
+                        <div class="content">
+                            <div class="icon">
+                                <a href="#"><i class="fas fa-calendar"></i> 10/12/2023</a>
+                                <a href="#"><i class="fas fa-user"></i> Bs. Tuấn</a>
                             </div>
-                            <p class="news-desc anim-text">
-                                Niềng răng là một hành trình dài. Việc vệ sinh đúng cách giúp tránh viêm lợi và sâu răng...
-                            </p>
-                            <a href="news-detail.html" class="btn-readmore anim-text">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                            <h3>Hướng dẫn chăm sóc răng sau khi niềng</h3>
+                            <p>Niềng răng cần sự kiên trì và chăm sóc kỹ lưỡng. Hãy cùng tìm hiểu quy trình vệ sinh răng miệng đúng chuẩn y khoa...</p>
+                            <a href="news-detail.html" class="btn">Xem chi tiết <i class="fas fa-chevron-right"></i></a>
                         </div>
-                    </article>
+                    </div>
 
-                    <article class="news-item">
-                        <div class="news-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://via.placeholder.com/400x300/fd7e14/ffffff?text=Implant" alt="Implant">
-                            </a>
+                    <div class="news-box anim-element">
+                        <div class="image">
+                            <img src="https://via.placeholder.com/400x300/e67e22/ffffff?text=Boc+Su" alt="Bọc sứ">
                         </div>
-                        <div class="news-content">
-                            <h2 class="news-title anim-text">Ưu đãi giảm 30% cấy ghép Implant tháng này</h2>
-                            <div class="news-meta anim-text">
-                                <span class="date"><i class="far fa-calendar-alt"></i> 08/12/2023</span>
-                                <span class="author"><i class="far fa-user"></i> Admin</span>
+                        <div class="content">
+                            <div class="icon">
+                                <a href="#"><i class="fas fa-calendar"></i> 08/12/2023</a>
+                                <a href="#"><i class="fas fa-user"></i> Admin</a>
                             </div>
-                            <p class="news-desc anim-text">
-                                Chương trình khuyến mãi đặc biệt dành cho khách hàng đăng ký trọn gói Implant. Cơ hội phục hồi răng mất...
-                            </p>
-                            <a href="news-detail.html" class="btn-readmore anim-text">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+                            <h3>Ưu đãi bọc răng sứ thẩm mỹ giảm 20%</h3>
+                            <p>Cơ hội sở hữu nụ cười tỏa nắng với công nghệ bọc sứ Nano 5S hiện đại nhất hiện nay. Đừng bỏ lỡ ưu đãi...</p>
+                            <a href="news-detail.html" class="btn">Xem chi tiết <i class="fas fa-chevron-right"></i></a>
                         </div>
-                    </article>
+                    </div>
 
-                    <article class="news-item">
-                        <div class="news-thumb">
-                            <a href="news-detail.html">
-                                <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Cao+Rang" alt="Lấy cao răng">
-                            </a>
-                        </div>
-                        <div class="news-content">
-                            <h2 class="news-title anim-text">Tại sao nên lấy cao răng định kỳ 6 tháng/lần?</h2>
-                            <div class="news-meta anim-text">
-                                <span class="date"><i class="far fa-calendar-alt"></i> 01/12/2023</span>
-                                <span class="author"><i class="far fa-user"></i> Bs. Hạnh</span>
-                            </div>
-                            <p class="news-desc anim-text">
-                                Cao răng là nguyên nhân chính gây ra viêm lợi và hôi miệng. Tìm hiểu quy trình siêu âm không đau...
-                            </p>
-                            <a href="news-detail.html" class="btn-readmore anim-text">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3>Về Dental Clinic</h3>
-                <p>Chúng tôi cam kết mang lại nụ cười rạng rỡ với công nghệ tiên tiến nhất.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Liên Hệ</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1, TP.HCM</p>
-                <p><i class="fas fa-phone"></i> 1900 1234</p>
-            </div>
-            <div class="footer-col">
-                <h3>Theo dõi</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Dental Clinic. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="js/news.js"></script>
-</body> 
-</html>
+                    <div class="news-box anim-element">
+                        <div class="image">
+                            <img src="
