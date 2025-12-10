@@ -19,6 +19,7 @@ $(document).ready(function() {
             
             // Hiện slide mới
             $(slides[index]).fadeIn(500).addClass('active');
+            currentSlide = index; // Cập nhật slide hiện tại
         }
 
         // Hàm bắt đầu chạy tự động
@@ -28,8 +29,8 @@ $(document).ready(function() {
             
             autoSlideInterval = setInterval(function() {
                 // Tăng index, nếu hết thì quay về 0
-                currentSlide = (currentSlide + 1) % totalSlides;
-                showSlide(currentSlide);
+                let nextSlide = (currentSlide + 1) % totalSlides;
+                showSlide(nextSlide);
             }, 4000); // 4000ms = 4 giây chuyển 1 lần
         }
 
@@ -38,8 +39,8 @@ $(document).ready(function() {
         // 1. Nút Next (Tiếp theo)
         $('.next-btn').click(function() {
             clearInterval(autoSlideInterval); // Tạm dừng tự động
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
+            let nextSlide = (currentSlide + 1) % totalSlides;
+            showSlide(nextSlide);
             startAutoSlide(); // Khởi động lại tự động
         });
 
@@ -47,32 +48,31 @@ $(document).ready(function() {
         $('.prev-btn').click(function() {
             clearInterval(autoSlideInterval); // Tạm dừng tự động
             // Công thức lùi vòng tròn (nếu về âm thì nhảy xuống cuối)
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
+            let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prevSlide);
             startAutoSlide(); // Khởi động lại tự động
         });
 
-        // Kích hoạt chạy tự động khi vào trang
+        // Đảm bảo slide đầu tiên được hiện khi load trang và bắt đầu chạy tự động
+        showSlide(currentSlide); 
         startAutoSlide();
     }
 
     /* ========================================== */
     /* 2. HIỆU ỨNG CUỘN TRANG (SCROLL ANIMATION)  */
-    /* (Tùy chọn: Làm các section hiện dần lên)   */
+    /* (Mặc dù không dùng trong CSS mới, nhưng giữ lại code nếu cần)   */
     /* ========================================== */
     
-    // Khi người dùng cuộn chuột
+    // Nếu bạn muốn thêm hiệu ứng, hãy thêm CSS cho các section và bật đoạn này.
+    /*
     $(window).scroll(function() {
-        // Lấy vị trí cuộn hiện tại + chiều cao cửa sổ
-        var scrollPos = $(window).scrollTop() + $(window).height() - 100;
-
-        // Duyệt qua các section chính
+        var scrollPos = $(window).scrollTop() + $(window).height() - 150; // Giảm offset
+        
         $('.section-doctors, .section-services-highlight, .section-promo').each(function() {
-            // Nếu cuộn tới vị trí của section đó
             if (scrollPos > $(this).offset().top) {
-                // Thêm class 'visible' (Bạn có thể thêm CSS cho class này nếu muốn hiệu ứng bay vào)
-                $(this).css('opacity', '1'); 
+                $(this).addClass('is-visible'); 
             }
         });
     });
+    */
 });
