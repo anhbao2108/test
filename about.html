@@ -1,46 +1,122 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Giới Thiệu</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo"><h1>Dental Care</h1></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Trang Chủ</a></li>
-                    <li><a href="about.html" class="active">Giới Thiệu</a></li>
-                    <li><a href="services.html">Dịch Vụ</a></li>
-                    <li><a href="news.html">Tin Tức</a></li>
-                    <li><a href="contact.html">Liên Hệ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+/* ========================================= */
+/* 1. SECTION GIỚI THIỆU (INTRO)             */
+/* ========================================= */
+.about-intro {
+    text-align: center;
+    padding: 60px 0;
+    max-width: 800px; /* Giới hạn chiều rộng cho dễ đọc */
+    margin: 0 auto;
+}
 
-    <main class="container about-section">
-        <div class="about-content">
-            <h2>Về Chúng Tôi</h2>
-            <p>Phòng khám Dental Care được thành lập với sứ mệnh mang lại nụ cười khỏe đẹp cho mọi người. Chúng tôi áp dụng các công nghệ tiên tiến nhất từ Úc và Mỹ.</p>
-            <p>Đội ngũ bác sĩ tận tâm, không gian vô trùng tuyệt đối là cam kết của chúng tôi.</p>
-        </div>
+.about-intro p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
 
-        <div class="about-image">
-            <div class="img-wrapper">
-                <img src="images/doctor.jpg" alt="Bác sĩ trưởng khoa" class="doctor-img">
-            </div>
-            <p class="dr-name">BS. Nguyễn Văn A - Trưởng Khoa</p>
-        </div>
-    </main>
+/* ========================================= */
+/* 2. SECTION ĐỘI NGŨ BÁC SĨ (TEAM)          */
+/* ========================================= */
+.team {
+    padding-bottom: 60px;
+}
 
-    <footer>
-        <p>&copy; 2024 Phòng Khám Nha Khoa Dental Care.</p>
-    </footer>
-    
-    <script src="js/about.js"></script> 
-</body>
-</html>
+.team-list {
+    display: flex;
+    flex-direction: column; /* Xếp các bác sĩ theo hàng dọc */
+    gap: 50px; /* Khoảng cách giữa các bác sĩ */
+}
+
+/* Layout từng thẻ bác sĩ: Flexbox 2 Cột */
+.doctor-item {
+    display: flex; /* Kích hoạt layout ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden; /* Bo góc mượt mà */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Cột Trái: Ảnh (Chiếm 40%) */
+.doctor-img-wrapper {
+    flex: 0 0 40%; 
+    height: 300px;
+    overflow: hidden; /* Bắt buộc có để hiệu ứng zoom không bị tràn */
+}
+
+.doctor-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Hiệu ứng chuyển động mượt */
+    transition: transform 0.5s ease;
+}
+
+/* HOVER: Phóng to ảnh nhẹ */
+.doctor-img-wrapper:hover img {
+    transform: scale(1.1); /* Phóng to 110% */
+}
+
+/* Cột Phải: Thông tin (Chiếm phần còn lại) */
+.doctor-info {
+    padding: 30px;
+    flex: 1;
+}
+
+.doctor-info h3 {
+    color: #0056b3; /* Xanh Y Tế */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.doctor-info .role {
+    color: #e64a19; /* Cam Điểm Nhấn */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.doctor-info .desc {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive cho Mobile: Chuyển về 1 cột dọc */
+@media (max-width: 768px) {
+    .doctor-item {
+        flex-direction: column; /* Ảnh trên, chữ dưới */
+    }
+    .doctor-img-wrapper {
+        flex: none;
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* ========================================= */
+/* 3. SECTION ĐỊA CHỈ (LOCATION)             */
+/* ========================================= */
+.location {
+    background-color: #f4f8fb; /* Nền xanh rất nhạt */
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.location-info {
+    background: white;
+    display: inline-block;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-bottom: 4px solid #0056b3;
+}
+
+.location-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
