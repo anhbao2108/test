@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 2. Cấu hình IntersectionObserver (Theo dõi cuộn chuột)
     if ('IntersectionObserver' in window) {
-        
+         
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 // Nếu bài viết lọt vào màn hình
