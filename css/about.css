@@ -1,49 +1,122 @@
-.about-section {
-    display: flex; /* Layout 2 cột */
-    align-items: center;
-    margin-top: 50px;
-    gap: 40px;
-}
-
-.about-content {
-    flex: 1; /* Chiếm 1 phần */
-}
-
-.about-content h2 {
-    color: #0056b3;
-    margin-bottom: 20px;
-}
-
-.about-image {
-    flex: 1; /* Chiếm 1 phần */
+/* ========================================= */
+/* 1. SECTION GIỚI THIỆU (INTRO)             */
+/* ========================================= */
+.about-intro {
     text-align: center;
+    padding: 60px 0;
+    max-width: 800px; /* Giới hạn chiều rộng cho dễ đọc */
+    margin: 0 auto;
 }
 
-.img-wrapper {
-    overflow: hidden; /* Cần thiết để crop ảnh khi phóng to */
+.about-intro p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* ========================================= */
+/* 2. SECTION ĐỘI NGŨ BÁC SĨ (TEAM)          */
+/* ========================================= */
+.team {
+    padding-bottom: 60px;
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column; /* Xếp các bác sĩ theo hàng dọc */
+    gap: 50px; /* Khoảng cách giữa các bác sĩ */
+}
+
+/* Layout từng thẻ bác sĩ: Flexbox 2 Cột */
+.doctor-item {
+    display: flex; /* Kích hoạt layout ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background: #fff;
+    border: 1px solid #eee;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden; /* Bo góc mượt mà */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.doctor-img {
+/* Cột Trái: Ảnh (Chiếm 40%) */
+.doctor-img-wrapper {
+    flex: 0 0 40%; 
+    height: 300px;
+    overflow: hidden; /* Bắt buộc có để hiệu ứng zoom không bị tràn */
+}
+
+.doctor-img-wrapper img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    /* Hiệu ứng transform & transition */
+    /* Hiệu ứng chuyển động mượt */
     transition: transform 0.5s ease;
 }
 
-/* Hover: Phóng to ảnh */
-.doctor-img:hover {
-    transform: scale(1.1);
+/* HOVER: Phóng to ảnh nhẹ */
+.doctor-img-wrapper:hover img {
+    transform: scale(1.1); /* Phóng to 110% */
 }
 
-.dr-name {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #0056b3;
+/* Cột Phải: Thông tin (Chiếm phần còn lại) */
+.doctor-info {
+    padding: 30px;
+    flex: 1;
 }
-/* Hover vào tiêu đề bài viết thì ra màu cam */
-.news-content h3:hover {
-    color: #e64a19;
-    cursor: pointer;
+
+.doctor-info h3 {
+    color: #0056b3; /* Xanh Y Tế */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.doctor-info .role {
+    color: #e64a19; /* Cam Điểm Nhấn */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.doctor-info .desc {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive cho Mobile: Chuyển về 1 cột dọc */
+@media (max-width: 768px) {
+    .doctor-item {
+        flex-direction: column; /* Ảnh trên, chữ dưới */
+    }
+    .doctor-img-wrapper {
+        flex: none;
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* ========================================= */
+/* 3. SECTION ĐỊA CHỈ (LOCATION)             */
+/* ========================================= */
+.location {
+    background-color: #f4f8fb; /* Nền xanh rất nhạt */
+    padding: 50px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.location-info {
+    background: white;
+    display: inline-block;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-bottom: 4px solid #0056b3;
+}
+
+.location-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #333;
 }
