@@ -1,169 +1,86 @@
-/* --- 1. CẤU HÌNH & BIẾN MÀU (Dental Care Theme) --- */
-:root {
-    --primary-blue: #0056b3;   /* Xanh dương */
-    --accent-orange: #E64A19;  /* Cam điểm nhấn */
-    --text-color: #333;
-    --bg-light: #f9f9f9;
-}
-
-/* Reset riêng cho phần Main để không vỡ layout cũ */
-main.container {
-    padding: 40px 15px;
-    max-width: 1140px; /* Giới hạn chiều rộng chuẩn */
-    margin: 0 auto;
-}
-
-/* Tiêu đề trang */
-.page-title {
-    text-align: center;
-    color: var(--primary-blue);
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    border-bottom: 2px solid var(--accent-orange);
-    display: inline-block;
-    padding-bottom: 10px;
-    /* Căn giữa tiêu đề */
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* --- 2. LAYOUT DANH SÁCH (LIST VIEW) --- */
-.news-list {
-    display: flex;
-    flex-direction: column; /* Xếp dọc các bài viết */
-    gap: 30px;
-}
-
-/* --- 3. STYLE TỪNG BÀI VIẾT (NEWS ITEM) --- */
-.news-item {
-    display: flex; /* Flexbox: Ảnh trái - Nội dung phải */
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức Sức Khỏe - Dental Care</title>
     
-    /* Animation: Trạng thái ẩn ban đầu */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s;
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/news.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><h1>Dental Care</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="services.html">Dịch Vụ</a></li>
+                    <li><a href="news.html" class="active">Tin Tức</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-/* Trạng thái hiện ra (Được JS thêm vào) */
-.news-item.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    <main class="container">
+        <h2 class="page-title">Tin Tức & Sự Kiện</h2>
+        
+        <div class="news-list">
+            
+            <article class="news-item" data-index="1">
+                <div class="news-thumb-wrapper">
+                    <img class="news-thumb" src="https://via.placeholder.com/400x300/0056b3/ffffff?text=Dental+News+1" alt="News 1">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title"><a href="#">5 Cách Chăm Sóc Răng Miệng Tại Nhà</a></h3>
+                    <p class="news-meta">
+                        <span class="date"><i class="far fa-calendar-alt"></i> 10/12/2023</span>
+                        <span class="author"><i class="far fa-user"></i> Bs. Tuấn</span>
+                    </p>
+                    <p class="news-excerpt">Hướng dẫn chi tiết cách đánh răng đúng cách và sử dụng chỉ nha khoa để tránh sâu răng hiệu quả, mang lại nụ cười tự tin mỗi ngày...</p>
+                    <a href="#" class="read-more">Xem chi tiết &rarr;</a>
+                </div>
+            </article>
 
-.news-item:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    transform: translateY(-5px); /* Hiệu ứng nổi lên nhẹ */
-}
+            <article class="news-item" data-index="2">
+                <div class="news-thumb-wrapper">
+                    <img class="news-thumb" src="https://via.placeholder.com/400x300/E64A19/ffffff?text=Dental+News+2" alt="News 2">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title"><a href="#">Khuyến Mãi Tháng 12: Giảm 20% Cạo Vôi</a></h3>
+                    <p class="news-meta">
+                        <span class="date"><i class="far fa-calendar-alt"></i> 08/12/2023</span>
+                        <span class="author"><i class="far fa-user"></i> Admin</span>
+                    </p>
+                    <p class="news-excerpt">Chương trình tri ân khách hàng cuối năm, áp dụng cho tất cả các dịch vụ nha khoa tổng quát. Đăng ký ngay để nhận ưu đãi giới hạn...</p>
+                    <a href="#" class="read-more">Xem chi tiết &rarr;</a>
+                </div>
+            </article>
 
-/* Cột Ảnh (Trái) */
-.news-thumb-wrapper {
-    flex: 0 0 250px; /* Cố định chiều rộng ảnh 250px */
-    position: relative;
-    overflow: hidden;
-}
+            <article class="news-item" data-index="3">
+                <div class="news-thumb-wrapper">
+                    <img class="news-thumb" src="https://via.placeholder.com/400x300/0056b3/ffffff?text=Dental+News+3" alt="News 3">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title"><a href="#">Niềng Răng Trong Suốt: Nên Hay Không?</a></h3>
+                    <p class="news-meta">
+                        <span class="date"><i class="far fa-calendar-alt"></i> 05/12/2023</span>
+                        <span class="author"><i class="far fa-user"></i> Bs. Lan</span>
+                    </p>
+                    <p class="news-excerpt">Giải đáp thắc mắc về phương pháp chỉnh nha hiện đại nhất hiện nay. Ưu nhược điểm và chi phí thực tế bạn cần biết...</p>
+                    <a href="#" class="read-more">Xem chi tiết &rarr;</a>
+                </div>
+            </article>
 
-.news-thumb {
-    width: 100%;
-    height: 100%;
-    min-height: 200px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
+        </div>
+    </main>
 
-.news-item:hover .news-thumb {
-    transform: scale(1.05); /* Zoom ảnh khi hover */
-}
-
-/* Cột Nội dung (Phải) */
-.news-content {
-    flex: 1;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Tiêu đề bài viết */
-.news-title {
-    margin: 0 0 10px 0;
-    font-size: 1.4rem;
-    line-height: 1.3;
-}
-
-.news-title a {
-    text-decoration: none;
-    color: var(--primary-blue);
-    transition: color 0.3s;
-}
-
-.news-title a:hover {
-    color: var(--accent-orange);
-}
-
-/* Meta: Ngày & Tác giả */
-.news-meta {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 15px;
-    font-style: italic;
-}
-.news-meta i {
-    color: var(--accent-orange);
-    margin-right: 5px;
-    margin-left: 10px;
-}
-.news-meta i:first-child { margin-left: 0; }
-
-/* Đoạn trích */
-.news-excerpt {
-    color: var(--text-color);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Cắt dòng nếu quá dài */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Nút xem chi tiết */
-.read-more {
-    color: var(--primary-blue);
-    font-weight: bold;
-    text-decoration: none;
-    align-self: flex-start;
-    border-bottom: 2px solid transparent;
-}
-
-.read-more:hover {
-    color: var(--accent-orange);
-    border-bottom-color: var(--accent-orange);
-}
-
-/* --- 4. RESPONSIVE (MOBILE) --- */
-@media (max-width: 768px) {
-    .news-item {
-        flex-direction: column; /* Chuyển thành dọc: Ảnh trên - Chữ dưới */
-    }
-
-    .news-thumb-wrapper {
-        flex: none;
-        width: 100%;
-        height: 200px; /* Chiều cao cố định cho ảnh mobile */
-    }
-
-    .news-content {
-        padding: 20px;
-    }
-
-    .page-title {
-        font-size: 1.8rem;
-        width: 100%;
-    }
-}
+    <footer><p>&copy; 2024 Phòng Khám Nha Khoa Dental Care.</p></footer>
+    
+    <script src="js/news.js"></script>
+</body>
+</html>
