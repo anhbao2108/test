@@ -3,57 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Bài Viết - Dental Care</title>
-    
+    <title>Chi Tiết Tin Tức - Dental Care</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/newsdetail.css">
+    <link rel="stylesheet" href="css/news-detail.css">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <div class="logo"><h1>Dental Care</h1></div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Trang Chủ</a></li>
-                    <li><a href="about.html">Giới Thiệu</a></li>
-                    <li><a href="services.html">Dịch Vụ</a></li>
-                    <li><a href="news.html" class="active">Tin Tức</a></li>
-                    <li><a href="contact.html">Liên Hệ</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="container">
+        <div class="logo"><h1>Dental Care</h1></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="services.html">Dịch Vụ</a></li>
+                <li><a href="news.html" class="active">Tin Tức</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <article class="news-detail">
+
+        <h1 id="detail-title" class="detail-title"></h1>
+
+        <p class="detail-meta">
+            <span><i class="far fa-calendar-alt"></i> <span id="detail-date"></span></span>
+            <span><i class="far fa-user"></i> <span id="detail-author"></span></span>
+        </p>
+
+        <div class="detail-thumb">
+            <img id="detail-image" src="" alt="">
         </div>
-    </header>
 
-    <main class="container">
-        <div class="breadcrumb">
-            <a href="news.html"><i class="fas fa-arrow-left"></i> Quay lại Tin tức</a>
-        </div>
+        <div id="detail-content" class="detail-content"></div>
 
-        <div class="detail-container">
-            
-            <h1 id="detail-title" class="detail-title">Đang tải nội dung...</h1>
-            
-            <div class="detail-meta">
-                <span id="detail-date"><i class="far fa-calendar-alt"></i> --/--/----</span>
-                <span id="detail-author"><i class="far fa-user"></i> ---</span>
-            </div>
+        <a href="news.html" class="back-news">
+            <i class="fas fa-arrow-left"></i> Quay lại Tin Tức
+        </a>
 
-            <div class="detail-image">
-                <img id="detail-img" src="" alt="Ảnh chi tiết" style="display: none;">
-            </div>
+    </article>
+</main>
 
-            <div id="detail-content" class="detail-content">
-                <p>Vui lòng chờ trong giây lát...</p>
-            </div>
+<footer>
+    <p>&copy; 2024 Phòng Khám Nha Khoa Dental Care.</p>
+</footer>
 
-        </div>
-    </main>
-
-    <footer><p>&copy; 2024 Phòng Khám Nha Khoa Dental Care.</p></footer>
-
-    <script src="js/newsdetail.js"></script>
+<script src="js/news-detail.js"></script>
 </body>
 </html>
