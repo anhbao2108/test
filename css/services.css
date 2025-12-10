@@ -164,7 +164,7 @@
 }
 
 .modal-body #modalDesc {
-    text-align: left; /* Nội dung chi tiết căn trái cho dễ đọc */
+    text-align: left; 
     line-height: 1.8;
     color: #333;
 }
