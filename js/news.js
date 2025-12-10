@@ -1,26 +1,40 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Chọn tất cả các thẻ bài viết
+    
+    // 1. Chọn tất cả các thẻ bài viết (news-item)
     const newsItems = document.querySelectorAll('.news-item');
 
-    // 2. Kiểm tra nếu trình duyệt hỗ trợ IntersectionObserver
+    // 2. Sử dụng IntersectionObserver để kiểm tra khi nào bài viết xuất hiện
     if ('IntersectionObserver' in window) {
         
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observerOptions = {
+            root: null,        // Theo dõi trong viewport
+            rootMargin: '0px', // Không có lề
+            threshold: 0.15    // Kích hoạt khi 15% bài viết hiện ra
+        };
+
+        const observer = new IntersectionObserver((entries, observerInstance) => {
             entries.forEach(entry => {
-                // Nếu bài viết lọt vào màn hình
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible'); // Thêm class để hiện ra
-                    observer.unobserve(entry.target); // Không theo dõi nữa
+                    // Thêm class 'is-visible' để chạy animation CSS
+                    entry.target.classList.add('is-visible');
+                    
+                    // Ngừng theo dõi phần tử này sau khi đã hiện
+                    observerInstance.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 }); // Hiện khi thấy 15%
+        }, observerOptions);
 
+        // Bắt đầu theo dõi từng bài viết
         newsItems.forEach(item => {
             observer.observe(item);
         });
 
     } else {
-        // Fallback: Nếu trình duyệt cũ quá thì hiện luôn
-        newsItems.forEach(item => item.classList.add('visible'));
+        // Fallback: Nếu trình duyệt quá cũ không hỗ trợ Observer, hiện luôn nội dung
+        newsItems.forEach(item => {
+            item.classList.add('is-visible');
+            item.style.opacity = 1;
+            item.style.transform = 'none';
+        });
     }
 });
