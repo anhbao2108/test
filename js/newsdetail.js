@@ -6,15 +6,27 @@ document.addEventListener("DOMContentLoaded", function () {
             date: "10/12/2023",
             author: "Bs. Tuấn",
             image: "https://via.placeholder.com/800x450/0056b3/ffffff?text=Dental+News+1",
-            content: `
-                <p>Chăm sóc răng miệng đúng cách giúp phòng ngừa sâu răng và các bệnh nha chu.</p>
-                <p><strong>1.</strong> Đánh răng ít nhất 2 lần mỗi ngày bằng kem đánh răng có fluor.</p>
-                <p><strong>2.</strong> Sử dụng chỉ nha khoa sau bữa ăn.</p>
-                <p><strong>3.</strong> Hạn chế đồ ngọt và nước có gas.</p>
-                <p><strong>4.</strong> Súc miệng bằng nước muối hoặc dung dịch chuyên dụng.</p>
-                <p><strong>5.</strong> Thăm khám nha khoa định kỳ 6 tháng/lần.</p>
-            `
+           content: `
+    <p>Chăm sóc răng miệng đúng cách không chỉ giúp bạn có nụ cười đẹp mà còn phòng tránh được nhiều bệnh lý nguy hiểm liên quan đến răng và nướu.</p>
+
+    <h2>Tại sao chăm sóc răng miệng lại quan trọng?</h2>
+    <p>Răng miệng là cửa ngõ của hệ tiêu hóa. Nếu không được vệ sinh đúng cách, vi khuẩn sẽ phát triển gây sâu răng, viêm nướu và ảnh hưởng đến sức khỏe tổng thể.</p>
+
+    <h2>5 cách chăm sóc răng miệng hiệu quả tại nhà</h2>
+    <ul>
+        <li><strong>Đánh răng đúng cách:</strong> Ít nhất 2 lần/ngày với kem đánh răng có fluor.</li>
+        <li><strong>Dùng chỉ nha khoa:</strong> Làm sạch kẽ răng nơi bàn chải không chạm tới.</li>
+        <li><strong>Súc miệng:</strong> Sử dụng dung dịch súc miệng chuyên dụng.</li>
+        <li><strong>Hạn chế đồ ngọt:</strong> Giảm nguy cơ hình thành axit gây sâu răng.</li>
+        <li><strong>Khám nha khoa định kỳ:</strong> Giúp phát hiện sớm các vấn đề.</li>
+    </ul>
+
+    <h2>Lời khuyên từ bác sĩ</h2>
+    <p>Thói quen chăm sóc răng miệng mỗi ngày chính là khoản đầu tư lâu dài cho sức khỏe. Nếu bạn có bất kỳ vấn đề nào, hãy đến Dental Care để được tư vấn kịp thời.</p>
+     `
         },
+`
+
 
         2: {
             title: "Khuyến Mãi Tháng 12: Giảm 20% Cạo Vôi",
