@@ -54,3 +54,4 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("detail-content").innerHTML = newsData[id].content;
     }
 });
+ 
