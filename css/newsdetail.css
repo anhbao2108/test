@@ -145,4 +145,44 @@
         grid-template-columns: 1fr;
     }
 }
+/* ===== ẢNH CHÈN TRONG BÀI VIẾT ===== */
+.detail-image-inline {
+    margin: 35px 0;
+    text-align: center;
+}
+
+.detail-image-inline img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.detail-image-inline span {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* ===== HEADING TRONG NỘI DUNG ===== */
+.detail-content h2 {
+    color: var(--primary-blue);
+    margin: 35px 0 15px;
+    font-size: 1.35rem;
+    border-left: 4px solid var(--accent-orange);
+    padding-left: 12px;
+}
+
+/* ===== DANH SÁCH ===== */
+.detail-content ul {
+    padding-left: 22px;
+    margin-bottom: 25px;
+}
+
+.detail-content ul li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
 
