@@ -1,140 +1,172 @@
-/* --- BIẾN MÀU & RESET (Đồng bộ style cũ) --- */
+/* =========================================
+   STYLE TRANG TIN TỨC (DENTAL CARE)
+   ========================================= */
+
+/* --- 1. Biến màu & Cấu hình chung --- */
+/* Sử dụng biến từ :root nếu có, nếu không dùng màu fallback */
 :root {
-    --green: #16a085;   /* Xanh chủ đạo (Green Dental) */
-    --black: #444;
-    --light-color: #777;
-    --orange: #e67e22;  /* Cam điểm nhấn */
-    --bg-color: #f0fdfc; /* Nền xanh rất nhạt */
-    --white: #fff;
-    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    --primary-blue-fallback: #0056b3;
+    --accent-orange-fallback: #E64A19;
+    --text-color-fallback: #333;
+    --light-gray: #f9f9f9;
 }
 
-* {
-    font-family: 'Poppins', sans-serif;
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    outline: none; border: none;
-    transition: all .2s linear;
+.news-section {
+    padding: 40px 0 60px;
+    background-color: var(--light-gray); /* Nền nhẹ cho toàn vùng tin tức */
 }
 
-body { background-color: var(--bg-color); }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-section { padding: 2rem 0; }
-
-/* --- HEADER STYLE (Dental Care) --- */
-.header {
-    position: sticky; top: 0; left: 0; right: 0; z-index: 1000;
-    background: var(--white);
-    box-shadow: var(--box-shadow);
-    padding: 1.5rem 0;
-}
-.header .container {
-    display: flex; align-items: center; justify-content: space-between;
-}
-.header .logo { font-size: 2rem; font-weight: bolder; color: var(--black); }
-.header .logo i { color: var(--green); }
-.header .logo span { color: var(--orange); } /* Chữ Care màu cam */
-
-.header .navbar a {
-    font-size: 1.2rem; margin-left: 2rem; color: var(--light-color);
-}
-.header .navbar a:hover, .header .navbar a.active { color: var(--green); }
-#menu-btn { font-size: 2.5rem; cursor: pointer; color: var(--black); display: none; }
-
-/* --- STYLE TRANG NEWS (List Layout) --- */
-.heading { text-align: center; padding-bottom: 2rem; text-shadow: 0 .5rem 1rem rgba(0,0,0,.1); font-size: 3rem; color: var(--black); }
-.heading span { color: var(--green); }
-
-.news-container {
-    display: flex; flex-direction: column; gap: 2rem; /* Xếp dọc */
+.page-title {
+    text-align: center;
+    /* Dùng biến --primary-color của project nếu có, không thì dùng fallback */
+    color: var(--primary-color, var(--primary-blue-fallback)); 
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.news-box {
+/* --- 2. Layout Danh sách bài viết --- */
+.news-list {
     display: flex;
-    background: var(--white);
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 30px; /* Khoảng cách giữa các bài viết */
+    max-width: 1000px; /* Giới hạn chiều rộng để dễ đọc */
+    margin: 0 auto;
 }
 
-.news-box .image { flex: 0 0 35%; overflow: hidden; }
-.news-box .image img { width: 100%; height: 100%; object-fit: cover; transition: .5s; }
-.news-box:hover .image img { transform: scale(1.1); }
-
-.news-box .content { flex: 1; padding: 2rem; }
-.news-box .content .icon { margin-bottom: 1rem; }
-.news-box .content .icon a { font-size: 1rem; color: var(--light-color); margin-right: 1.5rem; }
-.news-box .content .icon a i { color: var(--green); padding-right: .5rem; }
-
-.news-box .content h3 { font-size: 2rem; color: var(--black); margin-bottom: 1rem; line-height: 1.2; }
-.news-box .content p { font-size: 1.1rem; color: var(--light-color); line-height: 1.8; margin-bottom: 1rem; }
-
-.btn {
-    display: inline-block; margin-top: 1rem; padding: .8rem 2rem;
-    background: var(--green); color: var(--white);
-    font-size: 1.2rem; cursor: pointer; border-radius: .5rem;
-}
-.btn:hover { background: var(--orange); } /* Hover chuyển màu cam */
-
-/* --- STYLE TRANG CHI TIẾT (Detail) --- */
-.detail-container { max-width: 900px; background: var(--white); padding: 3rem; border-radius: 1rem; box-shadow: var(--box-shadow); margin-top: 2rem; margin-bottom: 2rem; }
-
-.back-link { display: inline-block; margin-bottom: 2rem; color: var(--green); font-size: 1.2rem; }
-.back-link:hover { color: var(--orange); padding-left: 5px; }
-
-.detail-title { font-size: 2.5rem; color: var(--black); margin-bottom: 1rem; }
-.detail-meta { margin-bottom: 2rem; color: var(--light-color); font-size: 1rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
-.detail-meta span { margin-right: 20px; }
-.detail-meta i { color: var(--green); }
-
-.detail-thumb img { width: 100%; border-radius: .5rem; margin-bottom: 2rem; }
-
-.detail-content p { font-size: 1.2rem; color: var(--light-color); line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; }
-.detail-content h3 { font-size: 1.8rem; color: var(--black); margin-top: 2.5rem; margin-bottom: 1rem; border-left: 5px solid var(--orange); padding-left: 1rem; }
-.detail-content blockquote { font-size: 1.3rem; font-style: italic; color: var(--green); background: #f0fdfc; padding: 2rem; border-radius: .5rem; margin: 2rem 0; text-align: center; }
-
-.related-posts { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--green); }
-.related-posts h3 { font-size: 1.8rem; color: var(--black); margin-bottom: 1.5rem; }
-.related-posts ul li { margin-bottom: 1rem; list-style: none; }
-.related-posts ul li a { font-size: 1.2rem; color: var(--light-color); }
-.related-posts ul li a:hover { color: var(--green); padding-left: 5px; }
-
-/* --- FOOTER STYLE (Dental Care) --- */
-.footer { background: var(--white); border-top: 1px solid rgba(0,0,0,0.1); }
-.footer .box-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 1.5rem; }
-.footer .box h3 { font-size: 1.8rem; color: var(--black); padding: 1rem 0; }
-.footer .box a { display: block; font-size: 1.1rem; color: var(--light-color); padding: 1rem 0; }
-.footer .box a i { color: var(--green); padding-right: .5rem; }
-.footer .box a:hover { color: var(--green); padding-left: 1rem; }
-.credit { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: .1rem solid rgba(0,0,0,.1); font-size: 1.2rem; color: var(--light-color); }
-.credit span { color: var(--green); }
-
-/* --- ANIMATION --- */
-.anim-element { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
-.anim-element.visible { opacity: 1; transform: translateY(0); }
-
-/* --- RESPONSIVE --- */
-@media (max-width: 991px) {
-    html { font-size: 55%; }
-    .header { padding: 2rem; }
+/* Khối từng bài viết */
+.news-item {
+    display: flex;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Bo góc ảnh */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Shadow nhẹ theo mẫu */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-@media (max-width: 768px) {
-    #menu-btn { display: inline-block; }
-    .header .navbar {
-        position: absolute; top: 99%; left: 0; right: 0;
-        background: var(--white); border-top: .1rem solid rgba(0,0,0,.1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Ẩn menu mobile */
-        transition: .2s linear;
-    }
-    .header .navbar.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
-    .header .navbar a { display: block; margin: 2rem; font-size: 2rem; }
+.news-item:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Hover nổi lên */
+    transform: translateY(-3px);
+}
+
+/* --- 3. Hình ảnh (Thumbnail) --- */
+.news-thumb-wrapper {
+    flex: 0 0 250px; /* Cố định chiều rộng ảnh desktop */
+    position: relative;
+    overflow: hidden; /* Để crop ảnh khi zoom */
+}
+
+.news-thumb {
+    width: 100%;
+    height: 100%;
+    min-height: 200px; /* Chiều cao tối thiểu */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hiệu ứng zoom ảnh khi hover bài viết */
+.news-item:hover .news-thumb {
+    transform: scale(1.03);
+}
+
+/* --- 4. Nội dung bài viết --- */
+.news-content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     
-    .news-box { flex-direction: column; }
-    .news-box .image { height: 25rem; }
-    .detail-container { padding: 1.5rem; }
-    .detail-title { font-size: 2rem; }
+    /* Setup cho hiệu ứng Fade-in text */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Tiêu đề */
+.news-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+.news-title a {
+    text-decoration: none;
+    color: var(--primary-color, var(--primary-blue-fallback));
+    transition: color 0.3s ease;
+}
+
+/* Hover đổi màu tiêu đề sang cam */
+.news-item:hover .news-title a {
+    color: var(--accent-color, var(--accent-orange-fallback));
+}
+
+/* Thông tin ngày tháng/tác giả */
+.news-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.news-meta i {
+    color: var(--accent-color, var(--accent-orange-fallback));
+    margin-right: 5px;
+}
+
+/* Đoạn mô tả ngắn */
+.news-excerpt {
+    color: var(--text-color, var(--text-color-fallback));
+    line-height: 1.6;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Giới hạn 3 dòng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Nút xem thêm (Optional style) */
+.read-more {
+    font-weight: 600;
+    color: var(--primary-color, var(--primary-blue-fallback));
+    text-decoration: none;
+    align-self: flex-start;
+    font-size: 0.95rem;
+}
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* --- 5. Animation Classes (JS kích hoạt) --- */
+/* Khi JS thêm class .is-visible vào .news-item, text bên trong sẽ hiện ra */
+.news-item.is-visible .news-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 6. Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .news-item {
+        flex-direction: column; /* Ảnh trên, chữ dưới */
+    }
+
+    .news-thumb-wrapper {
+        flex: none;
+        width: 100%;
+        height: 200px; /* Chiều cao cố định trên mobile */
+    }
+
+    .news-content {
+        padding: 20px;
+    }
+
+    .news-title {
+        font-size: 1.3rem;
+    }
 }
