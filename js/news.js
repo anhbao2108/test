@@ -1,11 +1,17 @@
-// Sử dụng Intersection Observer hoặc đơn giản là window.onload để kích hoạt fade in
-window.onload = function() {
-    const textElements = document.querySelectorAll('.fade-text');
-    
-    textElements.forEach((el, index) => {
-        // Set timeout để từng cái hiện ra lần lượt cho đẹp
-        setTimeout(() => {
-            el.classList.add('visible');
-        }, index * 300); // Mỗi bài cách nhau 300ms
-    });
-};
+document.addEventListener("DOMContentLoaded", function() {
+    // Xử lý hiệu ứng Fade-in khi scroll
+    const animatedElements = document.querySelectorAll('.anim-text');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100); 
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    animatedElements.forEach(el => observer.observe(el));
+});
