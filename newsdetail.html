@@ -3,68 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết tin tức - Dental Care</title>
+    <title>Chi Tiết Bài Viết - Dental Care</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="stylesheet" href="css/style.css">      
-    <link rel="stylesheet" href="css/newsdetail.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/newsdetail.css">
 </head>
 <body>
 
-    <header class="header">
+    <header>
         <div class="container">
-            <div class="logo">Dental <span>Care</span></div>
-            <nav class="navbar">
-                <a href="index.html">Trang chủ</a>
-                <a href="about.html">Giới thiệu</a>
-                <a href="services.html">Dịch vụ</a>
-                <a href="news.html">Tin tức</a>
-                <a href="contact.html">Liên hệ</a>
+            <div class="logo"><h1>Dental Care</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="services.html">Dịch Vụ</a></li>
+                    <li><a href="news.html" class="active">Tin Tức</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="news.html"><i class="fas fa-arrow-left"></i> Quay lại danh sách tin</a>
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="news.html"><i class="fas fa-arrow-left"></i> Quay lại Tin tức</a>
+        </div>
+
+        <div class="detail-container">
+            
+            <h1 id="detail-title" class="detail-title">Đang tải nội dung...</h1>
+            
+            <div class="detail-meta">
+                <span id="detail-date"><i class="far fa-calendar-alt"></i> --/--/----</span>
+                <span id="detail-author"><i class="far fa-user"></i> ---</span>
             </div>
 
-            <article class="detail-container" id="detail-container">
-                
-                <h1 id="post-title" class="detail-title">Đang tải bài viết...</h1>
-                
-                <div class="detail-meta">
-                    <span><i class="far fa-calendar-alt"></i> <span id="post-date">--/--/----</span></span>
-                    <span><i class="far fa-user"></i> <span id="post-author">Admin</span></span>
-                </div>
-
-                <div class="detail-image">
-                    <img id="post-image" src="" alt="Ảnh bài viết" style="display: none;"> 
-                </div>
-
-                <div id="post-content" class="detail-content">
-                    <p>Nếu bạn thấy dòng chữ này quá lâu, vui lòng kiểm tra lại file JS hoặc đường dẫn ID trên thanh địa chỉ (ví dụ: ?id=1).</p>
-                </div>
-
-            </article>
-
-            <div class="related-posts">
-                <h3>Tin tức khác</h3>
-                <ul>
-                    <li><a href="newsdetail.html?id=1"><i class="fas fa-chevron-right"></i> Chăm sóc răng sau niềng</a></li>
-                    <li><a href="newsdetail.html?id=2"><i class="fas fa-chevron-right"></i> Khuyến mãi bọc sứ</a></li>
-                    <li><a href="newsdetail.html?id=3"><i class="fas fa-chevron-right"></i> Lấy cao răng định kỳ</a></li>
-                </ul>
+            <div class="detail-image">
+                <img id="detail-img" src="" alt="Ảnh chi tiết" style="display: none;">
             </div>
+
+            <div id="detail-content" class="detail-content">
+                <p>Vui lòng chờ trong giây lát...</p>
+            </div>
+
         </div>
     </main>
 
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2024 Dental Care. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer><p>&copy; 2024 Phòng Khám Nha Khoa Dental Care.</p></footer>
 
     <script src="js/newsdetail.js"></script>
 </body>
