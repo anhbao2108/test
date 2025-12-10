@@ -145,10 +145,9 @@
     color: #e64a19;
 }
 
-/* Modal Body Styles */
 .modal-body {
     text-align: center;
-}
+} 
 
 .modal-body img {
     width: 100%;
