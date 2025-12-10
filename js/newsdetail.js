@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
             image: "https://via.placeholder.com/800x450/E64A19/ffffff?text=Dental+News+2",
             content: `
                 <p>Nhằm tri ân khách hàng cuối năm, Dental Care triển khai chương trình ưu đãi đặc biệt.</p>
-                <p>✨ Giảm ngay 20% dịch vụ cạo vôi răng.</p>
-                <p>✨ Áp dụng trong tháng 12.</p>
-                <p>✨ Số lượng ưu đãi có hạn.</p>
+                <p> Giảm ngay 20% dịch vụ cạo vôi răng.</p>
+                <p> Áp dụng trong tháng 12.</p>
+                <p> Số lượng ưu đãi có hạn.</p>
             `
         },
 
