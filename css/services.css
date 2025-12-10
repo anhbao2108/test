@@ -39,12 +39,12 @@
     border-color: #e64a19; /* Viền chuyển màu cam */
 }
 
-/* Icon Font Awesome */
+/* --- QUAN TRỌNG: STYLE CHO ICON --- */
 .icon-box {
     text-align: center;
-    padding: 20px 0;
-    font-size: 3rem; /* Icon to */
-    color: #e64a19; /* Màu cam chủ đạo */
+    padding: 25px 0 10px 0; /* Canh lề */
+    font-size: 3.5rem;      /* Kích thước icon TO */
+    color: #e64a19;         /* Màu CAM chủ đạo */
     transition: color 0.3s;
 }
 
@@ -58,6 +58,7 @@
     height: 200px; /* Chiều cao cố định */
     object-fit: cover; /* Cắt ảnh không bị méo */
     border-bottom: 1px solid #eee;
+    margin-top: 10px;
 }
 
 /* Nội dung Card */
@@ -79,7 +80,6 @@
 }
 
 /* --- RESPONSIVE --- */
-
 /* Tablet: 2 cột */
 @media (max-width: 992px) {
     .services-grid {
@@ -164,7 +164,7 @@
 }
 
 .modal-body #modalDesc {
-    text-align: left; 
+    text-align: left;
     line-height: 1.8;
     color: #333;
 }
