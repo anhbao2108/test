@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const newsData = {
-    1: {
-        title: "5 Cách Chăm Sóc Răng Miệng Tại Nhà Giúp Bảo Vệ Nụ Cười",
-        date: "10/12/2023",
-        author: "Bs. Tuấn",
-        image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Dental+Care",
+        1: {
+            title: "5 Cách Chăm Sóc Răng Miệng Tại Nhà Giúp Bảo Vệ Nụ Cười",
+            date: "10/12/2023",
+            author: "Bs. Tuấn",
+            image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Dental+Care",
 
-        content: `
+            content: `
             <p>
                 Chăm sóc răng miệng đúng cách mỗi ngày là yếu tố quan trọng giúp duy trì
                 sức khỏe răng nướu và phòng ngừa các bệnh lý nha khoa phổ biến.
@@ -51,15 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="services.html">Xem các dịch vụ nha khoa →</a>
             </div>
         `
-    },
+        },
 
-    2: {
-        title: "Ưu Đãi Tháng 12: Giảm 20% Dịch Vụ Cạo Vôi Răng",
-        date: "08/12/2023",
-        author: "Admin",
-        image: "https://via.placeholder.com/900x450/E64A19/ffffff?text=Dental+Promotion",
+        2: {
+            title: "Ưu Đãi Tháng 12: Giảm 20% Dịch Vụ Cạo Vôi Răng",
+            date: "08/12/2023",
+            author: "Admin",
+            image: "https://via.placeholder.com/900x450/E64A19/ffffff?text=Dental+Promotion",
 
-        content: `
+            content: `
             <p>
                 Nhằm tri ân khách hàng trong dịp cuối năm,
                 Phòng khám Dental Care triển khai chương trình ưu đãi đặc biệt
@@ -94,15 +94,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="services.html">Tìm hiểu các dịch vụ Dental Care →</a>
             </div>
         `
-    },
+        },
 
-    3: {
-        title: "Niềng Răng Trong Suốt: Giải Pháp Chỉnh Nha Hiện Đại",
-        date: "05/12/2023",
-        author: "Bs. Lan",
-        image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Invisible+Braces",
+        3: {
+            title: "Niềng Răng Trong Suốt: Giải Pháp Chỉnh Nha Hiện Đại",
+            date: "05/12/2023",
+            author: "Bs. Lan",
+            image: "https://via.placeholder.com/900x450/0056b3/ffffff?text=Invisible+Braces",
 
-        content: `
+            content: `
             <p>
                 Niềng răng trong suốt là phương pháp chỉnh nha hiện đại,
                 được nhiều khách hàng lựa chọn nhờ tính thẩm mỹ cao và sự tiện lợi.
@@ -141,17 +141,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="services.html">Xem dịch vụ chỉnh nha →</a>
             </div>
         `
-    }
-};
+        }
+    };
 
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
     if (newsData[id]) {
+        // Điền tiêu đề
         document.getElementById("detail-title").innerText = newsData[id].title;
-        document.getElementById("detail-date").innerText = newsData[id].date;
-        document.getElementById("detail-author").innerText = newsData[id].author;
-        document.getElementById("detail-image").src = newsData[id].image;
+
+        // --- ĐÃ SỬA LẠI ĐOẠN NÀY ĐỂ HIỆN ICON ---
+        // Dùng innerHTML và thêm thẻ <i class="..."> vào trước ngày tháng/tên tác giả
+        document.getElementById("detail-date").innerHTML = `<i class="far fa-calendar-alt"></i> ${newsData[id].date}`;
+        document.getElementById("detail-author").innerHTML = `<i class="far fa-user"></i> ${newsData[id].author}`;
+
+        // --- ĐÃ SỬA LẠI ĐOẠN NÀY ĐỂ HIỆN ẢNH ---
+        // Đổi 'detail-image' thành 'detail-img' cho khớp với HTML
+        // Và thêm style.display = 'block' để hiện ảnh lên (vì mặc định trong HTML đang ẩn)
+        const imgElement = document.getElementById("detail-img");
+        if(imgElement) {
+            imgElement.src = newsData[id].image;
+            imgElement.style.display = 'block'; 
+        }
+
+        // Điền nội dung
         document.getElementById("detail-content").innerHTML = newsData[id].content;
     }
 });
