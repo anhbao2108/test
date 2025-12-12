@@ -1,28 +1,25 @@
-document.getElementById('bookingForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn form load lại trang
+document.addEventListener("DOMContentLoaded", function() {
+    const bookingForm = document.getElementById('bookingForm');
 
-    // Lấy giá trị từ input
-    const name = document.getElementById('fullname').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const date = document.getElementById('date').value;
-    const message = document.getElementById('message').value.trim();
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Ngăn chặn load lại trang
 
-    // 1. Kiểm tra rỗng
-    if (!name || !phone || !date) {
-        alert("Vui lòng điền đầy đủ thông tin bắt buộc!");
-        return;
+            // Lấy dữ liệu (Demo)
+            const name = document.getElementById('fullname').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+
+            // Kiểm tra cơ bản
+            if(name && phone) {
+                // Giả lập gửi thành công
+                alert(`Cảm ơn ${name}! \nChúng tôi đã nhận được yêu cầu đặt lịch của bạn.\nSố điện thoại: ${phone}\nDịch vụ: ${service || 'Chưa chọn'}\nNhân viên sẽ gọi lại trong ít phút.`);
+                
+                // Reset form
+                bookingForm.reset();
+            } else {
+                alert("Vui lòng điền đầy đủ thông tin bắt buộc!");
+            }
+        });
     }
-
-    // 2. Kiểm tra số điện thoại (Regex: 10 chữ số)
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(phone)) {
-        alert("Số điện thoại không hợp lệ (Phải là 10 số)!");
-        return;
-    }
-
-    // Nếu mọi thứ OK
-    alert("Đăng ký thành công! Chúng tôi sẽ liên hệ lại với bạn: " + name);
-    
-    // Reset form
-    document.getElementById('bookingForm').reset();
 });
