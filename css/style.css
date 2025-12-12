@@ -27,10 +27,10 @@ img {
     display: block;
 }
 
-/* Container giới hạn chiều rộng để nội dung 1 cột không bị bè ngang quá mức */
+/* Container giới hạn chiều rộng */
 .container {
     width: 90%;
-    max-width: 1200px; /* Độ rộng chuẩn cho layout đọc 1 cột */
+    max-width: 1200px; /* Độ rộng chuẩn cho layout */
     margin: 0 auto;
 }
 
@@ -105,7 +105,7 @@ h1, h2, h3, h4 {
 }
 
 /* ================================================== */
-/* 4. HEADER & FOOTER CƠ BẢN                          */
+/* 4. HEADER CƠ BẢN                                   */
 /* ================================================== */
 header {
     background: white;
@@ -128,11 +128,70 @@ header .container {
 nav ul { list-style: none; display: flex; gap: 20px; }
 nav ul li a:hover, nav ul li a.active { color: #e64a19; font-weight: bold; }
 
-footer {
-    background-color: #0056b3;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
+
+/* ================================================== */
+/* 5. FOOTER CHUYÊN NGHIỆP (MỚI THÊM VÀO)             */
+/* ================================================== */
+
+/* Khung Footer Chính */
+.main-footer {
+    background-color: #0f172a; /* Màu xanh đen sang trọng */
+    color: #cbd5e1; /* Màu chữ xám trắng */
+    padding-top: 60px;
     margin-top: 50px;
-    border-top: 5px solid #e64a19; /* Viền cam đặc trưng Maven */
+    border-top: 4px solid #E64A19; /* Viền cam thương hiệu */
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Lưới 4 cột */
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+/* Tiêu đề cột */
+.footer-col h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #E64A19;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Logo Footer */
+.footer-logo { font-size: 2rem; font-weight: bold; color: #fff; margin-bottom: 15px; }
+.footer-logo span { color: #E64A19; }
+
+/* Link danh sách */
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
+.footer-links a:hover { color: #E64A19; padding-left: 5px; }
+.footer-links i { margin-right: 8px; font-size: 0.8rem; color: #E64A19; }
+
+/* Thông tin liên hệ */
+.contact-info { list-style: none; padding: 0; }
+.contact-info li { margin-bottom: 15px; display: flex; align-items: start; }
+.contact-info i { color: #E64A19; margin-right: 10px; width: 20px; margin-top: 5px; }
+
+/* Mạng xã hội */
+.social-links a {
+    display: inline-block; width: 35px; height: 35px; line-height: 35px;
+    background: rgba(255,255,255,0.1); text-align: center; color: #fff;
+    border-radius: 50%; margin-right: 5px; transition: 0.3s;
+}
+.social-links a:hover { background: #E64A19; }
+
+/* Dòng bản quyền dưới cùng */
+.footer-bottom {
+    background: #020617; text-align: center; padding: 15px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;
+}
+
+/* Responsive Footer cho điện thoại */
+@media (max-width: 768px) {
+    .footer-top { grid-template-columns: 1fr; }
 }
