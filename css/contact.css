@@ -1,61 +1,171 @@
-.page-title {
-    text-align: center;
-    color: #0056b3;
-    margin: 40px 0;
+/* --- BIẾN MÀU (Đồng bộ) --- */
+:root {
+    --primary-blue: #0056b3;
+    --accent-orange: #E64A19;
+    --text-color: #333;
+    --bg-light: #f9f9f9;
 }
 
-.form-wrapper {
-    max-width: 600px;
-    margin: 0 auto;
+/* --- BANNER HEADER --- */
+.page-banner {
+    background-color: var(--primary-blue);
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 50px;
+    background-image: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 86, 179, 0.9)), url('../images/banner-contact.jpg'); /* Nếu có ảnh nền */
+    background-size: cover;
+}
+.page-banner h2 { color: #fff; font-size: 2.5rem; margin-bottom: 10px; }
+.page-banner p { font-size: 1.1rem; opacity: 0.9; }
+
+/* --- BỐ CỤC CHÍNH (2 CỘT) --- */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.contact-info-col { flex: 1; min-width: 300px; }
+.contact-form-col { flex: 1.2; min-width: 300px; }
+
+/* --- CỘT TRÁI: THÔNG TIN --- */
+.info-box {
     background: #fff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    border-left: 5px solid var(--accent-orange);
 }
 
-.form-group {
+.info-box h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.5rem; }
+.info-box .desc { color: #666; margin-bottom: 25px; line-height: 1.6; }
+
+.info-list li {
+    display: flex;
     margin-bottom: 20px;
+    align-items: flex-start;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.info-list .icon {
+    width: 40px; height: 40px;
+    background: #eef6ff;
+    color: var(--primary-blue);
+    text-align: center; line-height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 1.1rem;
 }
 
-.form-group input, 
+.info-list strong { display: block; color: #333; margin-bottom: 3px; }
+.info-list p { color: #555; font-size: 0.95rem; margin: 0; }
+.info-list .highlight { color: var(--accent-orange); font-weight: bold; font-size: 1.1rem; }
+
+.map-box iframe {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- CỘT PHẢI: FORM ĐẶT LỊCH --- */
+.booking-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--primary-blue);
+}
+
+.booking-form h3 {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.booking-form > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* Style Input */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #444; }
+.form-group .required { color: red; }
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Chừa chỗ cho icon */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
+    outline: none;
+}
+
+.input-wrapper input[type="date"] { padding-left: 15px; } /* Date không cần icon bên trong */
+
 .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    font-family: inherit;
 }
 
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+}
+
+/* Chia đôi cột (Họ tên & SĐT) */
+.form-row { display: flex; gap: 20px; }
+.form-row .form-group { flex: 1; }
+
+/* Nút Submit */
 .submit-btn {
     width: 100%;
-    padding: 12px;
-    background-color: #0056b3;
+    padding: 15px;
+    background-color: var(--accent-orange);
     color: white;
     border: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #004494;
-}
-/* --- Maven Accent for CONTACT --- */
-
-/* Nút Submit đổi thành màu Cam (Nổi bật nhất trang) */
-.submit-btn {
-    background-color: #e64a19;
+    border-radius: 30px;
+    font-size: 1.1rem;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
     text-transform: uppercase;
+    margin-top: 10px;
 }
 
 .submit-btn:hover {
-    background-color: #d84315; /* Hover màu cam đậm hơn */
+    background-color: #bf360c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 74, 25, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-wrapper { flex-direction: column; }
+    .form-row { flex-direction: column; gap: 0; }
 }
