@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="footer-col">
                 <h3>Liên Hệ</h3>
                 <ul class="contact-info">
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Cầu Giấy, Hà Nội</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 97, Man Thiện, TP.HCM</li>
                     <li><i class="fas fa-phone-alt"></i> Hotline: <strong style="color: #E64A19;">1900 1234</strong></li>
                     <li><i class="fas fa-envelope"></i> contact@dentalcare.vn</li>
                     <li><i class="fas fa-clock"></i> 8:00 - 20:00 (Hàng ngày)</li>
