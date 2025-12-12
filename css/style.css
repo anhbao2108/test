@@ -130,16 +130,18 @@ nav ul li a:hover, nav ul li a.active { color: #e64a19; font-weight: bold; }
 
 
 /* ================================================== */
-/* 5. FOOTER CHUYÊN NGHIỆP (MỚI THÊM VÀO)             */
+/* 5. FOOTER CHUYÊN NGHIỆP (ĐÃ ĐỔI MÀU XANH)          */
 /* ================================================== */
 
 /* Khung Footer Chính */
 .main-footer {
-    background-color: #0f172a; /* Màu xanh đen sang trọng */
-    color: #cbd5e1; /* Màu chữ xám trắng */
+    /* ĐỔI MÀU NỀN TẠI ĐÂY */
+    background-color: #0056b3; /* Màu xanh giống hệt Header */
+    
+    color: #ffffff; /* Đổi chữ thành màu trắng tinh cho nổi */
     padding-top: 60px;
     margin-top: 50px;
-    border-top: 4px solid #E64A19; /* Viền cam thương hiệu */
+    border-top: 4px solid #E64A19; /* Viền cam giữ nguyên làm điểm nhấn */
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
@@ -169,26 +171,42 @@ nav ul li a:hover, nav ul li a.active { color: #e64a19; font-weight: bold; }
 /* Link danh sách */
 .footer-links { list-style: none; padding: 0; }
 .footer-links li { margin-bottom: 10px; }
-.footer-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
-.footer-links a:hover { color: #E64A19; padding-left: 5px; }
+.footer-links a { 
+    color: #e0e0e0; /* Màu chữ link hơi xám nhẹ */
+    text-decoration: none; 
+    transition: 0.3s; 
+}
+.footer-links a:hover { 
+    color: #fff; /* Hover vào thì trắng sáng */
+    padding-left: 5px; 
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
 .footer-links i { margin-right: 8px; font-size: 0.8rem; color: #E64A19; }
 
 /* Thông tin liên hệ */
 .contact-info { list-style: none; padding: 0; }
 .contact-info li { margin-bottom: 15px; display: flex; align-items: start; }
-.contact-info i { color: #E64A19; margin-right: 10px; width: 20px; margin-top: 5px; }
+/* Icon màu cam giữ nguyên cho nổi trên nền xanh */
+.contact-info i { color: #E64A19; margin-right: 10px; width: 20px; margin-top: 5px; font-size: 1.1rem; background: #fff; border-radius: 50%; width: 25px; height: 25px; text-align: center; line-height: 25px; color: #0056b3; font-weight: bold; }
 
 /* Mạng xã hội */
 .social-links a {
     display: inline-block; width: 35px; height: 35px; line-height: 35px;
-    background: rgba(255,255,255,0.1); text-align: center; color: #fff;
+    background: rgba(255,255,255,0.2); /* Nền mờ sáng hơn chút */
+    text-align: center; color: #fff;
     border-radius: 50%; margin-right: 5px; transition: 0.3s;
 }
 .social-links a:hover { background: #E64A19; }
 
 /* Dòng bản quyền dưới cùng */
 .footer-bottom {
-    background: #020617; text-align: center; padding: 15px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;
+    /* Màu nền đậm hơn một chút xíu để tạo ranh giới */
+    background: #004494; 
+    text-align: center; 
+    padding: 15px 0; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    font-size: 0.9rem;
+    color: #e0e0e0;
 }
 
 /* Responsive Footer cho điện thoại */
