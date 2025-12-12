@@ -1,31 +1,66 @@
 // js/common.js
 
-function loadFooter() {
-    const footerHTML = `
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Nội dung HTML của Footer Chuyên nghiệp
+    const footerContent = `
     <div class="container">
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; text-align: left;">
-            <div style="flex: 1; min-width: 250px; margin-bottom: 15px;">
-                <h3 style="color: #E64A19; margin-bottom: 10px; font-size: 1.2rem;">Dental Care</h3>
-                <p style="color: #ccc; line-height: 1.6; font-size: 0.9rem;">Nụ cười của bạn là niềm hạnh phúc của chúng tôi.</p>
+        <div class="footer-top">
+            <div class="footer-col">
+                <div class="footer-logo">Dental <span>Care</span></div>
+                <p class="footer-desc">
+                    Hệ thống nha khoa chuẩn Quốc tế. Cam kết mang lại nụ cười rạng rỡ và sức khỏe toàn diện.
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
             </div>
-            <div style="flex: 1; min-width: 250px; margin-bottom: 15px;">
-                <h3 style="color: #fff; margin-bottom: 10px; font-size: 1.2rem;">Thông Tin</h3>
-                <p style="color: #ccc; margin-bottom: 5px; font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: #E64A19;"></i> 123 Cầu Giấy, Hà Nội</p>
-                <p style="color: #ccc; font-size: 0.9rem;"><i class="fas fa-phone" style="color: #E64A19;"></i> 0987 654 321</p>
+
+            <div class="footer-col">
+                <h3>Dịch Vụ</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Niềng răng thẩm mỹ</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Cấy ghép Implant</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Bọc răng sứ</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Nhổ răng khôn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Về Chúng Tôi</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> Giới thiệu</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Bảng giá</a></li>
+                    <li><a href="news.html"><i class="fas fa-chevron-right"></i> Tin tức</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Cầu Giấy, Hà Nội</li>
+                    <li><i class="fas fa-phone-alt"></i> Hotline: <strong style="color: #E64A19;">1900 1234</strong></li>
+                    <li><i class="fas fa-envelope"></i> contact@dentalcare.vn</li>
+                    <li><i class="fas fa-clock"></i> 8:00 - 20:00 (Hàng ngày)</li>
+                </ul>
             </div>
         </div>
-        <div style="text-align: center; color: #888; font-size: 0.85rem;">
-            <p>&copy; 2024 Dental Care. All rights reserved.</p>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2024 <strong>Dental Care Clinic</strong>. All rights reserved.</p>
         </div>
     </div>
     `;
 
-    // Tìm thẻ footer và chèn nội dung vào
-    const footerElement = document.querySelector('footer');
+    // Tìm thẻ có id="main-footer" và chèn nội dung vào
+    const footerElement = document.getElementById('main-footer');
     if (footerElement) {
-        footerElement.innerHTML = footerHTML;
+        footerElement.innerHTML = footerContent;
+        footerElement.classList.add('main-footer'); // Thêm class để nhận CSS
     }
-}
-
-// Chạy hàm khi trang web tải xong
-document.addEventListener("DOMContentLoaded", loadFooter);
+});
